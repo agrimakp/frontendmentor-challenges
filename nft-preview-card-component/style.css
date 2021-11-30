@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+:root {
+  --main-bg-color: hsl(217, 54%, 11%);
+  --card-bg-color: hsl(216, 50%, 16%);
+
+  --white-color: hsl(0, 0%, 100%);
+  --cyan-color: hsl(178, 100%, 50%);
+  --soft-blue: hsl(215, 51%, 70%);
+  --blue-line: hsl(215, 32%, 27%);
+
+  --font-size-normal:15px;
+  --font-size-heading:22px;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: .5px;
+  font-size: var(--font-size-normal);
+  font-weight: 300;
+  font-style: normal;
+}
+.container {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  width: 320px;
+  height: auto;
+  padding: 20px;
+}
+.container .avatar {
+  height: 280px;
+  width: 280px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.container h1 {
+  color: var(--white-color);
+  font-size: var(--font-size-heading);
+}
+.container div {
+  color: var(--soft-blue);
+}
+
+.container .eth-days {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14px;
+}
+.container .eth-days .currency {
+  color: var(--cyan-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  /* font-size: var(); */
+}
+.container .eth-days .currency img {
+  padding-right: 5px;
+}
+.container .eth-days .expiry {
+  display: flex;
+  align-items: center;
+
+
+}
+.container .eth-days .expiry img {
+  padding-right: 5px;
+}
+.container footer {
+  border-top: 1px solid var(--blue-line);
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 15px;
+  align-items: center;
+  padding-top: 14px;
+}
+.container footer img {
+  border: 1px solid var(--white-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.container .author {
+  color: var(--white-color);
+}
+
+
