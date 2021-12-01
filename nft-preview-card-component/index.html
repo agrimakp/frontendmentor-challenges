@@ -11,7 +11,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./dist/style.css" />
+    <link rel="stylesheet" href="./dist/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,26 +31,71 @@
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <img
-        class="avatar"
-        src="./images/image-equilibrium.jpg"
-        alt="Equilibrium"
-      />
+  <body class="flex h-screen bg-blue-darker font-body text-blue-soft">
+    <div class="m-auto w-[320px] bg-blue-dark rounded-xl p-5">
+      <div class="relative block rounded-lg h-[280px] w-[280px]">
+        <img
+          class="object-cover rounded-lg w-full h-full"
+          src="./images/image-equilibrium.jpg"
+          alt="Equilibrium"
+        />
+        <div
+          class="
+            block
+            absolute
+            top-0
+            left-0
+            w-full
+            h-full
+            opacity-0
+            bg-cyan bg-opacity-50
+            cursor-pointer
+            rounded-lg
+            hover:opacity-100
+            flex
+            items-center
+            justify-center
+            flex-column
+          "
+        >
+          <img src="./images/icon-view.svg" />
+        </div>
+      </div>
       <div>
-        <h1>Equilibrium #3429</h1>
-        <p>Our Equilibrium collection promotes balance and calm.</p>
-        <div class="eth-days">
-          <div class="currency"><img src="./images/icon-ethereum.svg" /> <span> 0.041 eth</span></div>
-          <div class="expiry">
-            <img src="./images/icon-clock.svg" /><span>3 days left</span>
+        <h1 class="text-white text-[22px] my-4 hover:text-cyan cursor-pointer">
+          Equilibrium #3429
+        </h1>
+        <p class="my-4 tracking-wide">
+          Our Equilibrium collection promotes balance and calm.
+        </p>
+        <div class="flex justify-between">
+          <div class="flex gap-x-[5px] items-center">
+            <img src="./images/icon-ethereum.svg" />
+            <span class="uppercase text-cyan font-bold"> 0.041 eth</span>
+          </div>
+          <div class="flex gap-x-[5px] items-center">
+            <img src="./images/icon-clock.svg" />
+            <span>3 days left</span>
           </div>
         </div>
       </div>
-      <footer>
-        <img src="./images/image-avatar.png" />
-        <div>Creation of <span class="author">Jules Wyvern</span></div>
+      <div class="border-t border-solid border-blue-light my-5"></div>
+      <footer class="flex justify-start gap-x-[15px] items-center">
+        <img
+          class="
+            w-[30px]
+            h-[30px]
+            rounded-full
+            border border-solid border-white
+          "
+          src="./images/image-avatar.png"
+        />
+        <div>
+          Creation of
+          <span class="text-white hover:text-cyan cursor-pointer"
+            >Jules Wyvern</span
+          >
+        </div>
       </footer>
     </div>
   </body>
