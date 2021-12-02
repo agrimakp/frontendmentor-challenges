@@ -7,16 +7,20 @@ module.exports = {
       colors: {
         cyan: "hsl(178, 100%, 50%)",
         blue: {
-          soft: "hsl(215, 51%, 70%)",
-          dark: "hsl(216, 50%, 16%)",
-          darker: "hsl(217, 54%, 11%)",
-          light: "hsl(215, 32%, 27%)",
+          pale: "hsl(225, 100%, 94%)",
+          bright: "hsl(245, 75%, 52%)",
+          light: "hsl(225, 100%, 98%)",
+          desaturated: "hsl(224, 23%, 55%)",
+          dark: "hsl(223, 47%, 23%)",
         },
       },
       fontFamily: {
-        'body': ['Outfit']
+        'body': ['Red Hat Display']
       },
-      backgroundImage: ['hover', 'focus'],
+      backgroundImage: {
+        'desktop-pattern': "url('../images/pattern-background-desktop.svg')",
+
+      },
     },
   },
   variants: {
