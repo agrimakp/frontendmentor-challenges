@@ -5,13 +5,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cyan: "hsl(178, 100%, 50%)",
         blue: {
           pale: "hsl(225, 100%, 94%)",
           bright: "hsl(245, 75%, 52%)",
           light: "hsl(225, 100%, 98%)",
           desaturated: "hsl(224, 23%, 55%)",
           dark: "hsl(223, 47%, 23%)",
+          active: "hsl(244.5, 82.6%, 68.4%)",
         },
       },
       fontFamily: {
