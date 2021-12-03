@@ -1,22 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./dist/styles.css" />
-  <title>Frontend Mentor | Fylo data storage component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="dist/styles.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Fylo data storage component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body
+    class="
+      bg-left-bottom bg-cover bg-blue-darkest
+      font-body
+      text-[14px]
+      bg-desktop-pattern
+      h-screen
+      bg-no-repeat
+      md:bg-auto
+      lg:bg-contain
+      justify-center
+      flex
+      items-center
+      flex-col
+    "
+  >
+    <div
+      class="
+        bg-blue-dark
+        h-[200px]
+        w-[325px]
+        flex flex-col
+        pl-10
+        justify-center
+        gap-5
+        rounded-lg rounded-tr-[90px]
+      "
+    >
+      <img class="w-[140px] h-auto my-3" src="./images/logo.svg" />
+
+      <div class="flex w-full gap-4">
+        <img
+          class="
+            bg-blue-darkest
+            rounded-md
+            p-2
+            object-contain
+            w-[40px]
+            h-[40px]
+          "
+          src="./images/icon-document.svg"
+        />
+
+        <img
+          class="
+            bg-blue-darkest
+            rounded-md
+            p-2
+            object-contain
+            w-[40px]
+            h-[40px]
+          "
+          src="./images/icon-folder.svg"
+        />
+
+        <img
+          class="
+            bg-blue-darkest
+            rounded-md
+            p-2
+            object-contain
+            w-[40px]
+            h-[40px]
+          "
+          src="./images/icon-upload.svg"
+        />-
+      </div>
+    </div>
+    <div
+      class="
+        bg-blue-dark
+        h-[170px]
+        w-[325px]
+        flex flex-col
+        my-5
+        justify-center
+        gap-5
+        rounded-lg
+        p-8
+        text-center
+      "
+    >
+      <p class="text-white">
+        You've used <span class="font-bold">815 GB</span> of your storage
+      </p>
+      <div class="bg-blue-darkest rounded-md h-[20px] p-[2px]">
+        <div
+          class="
+            bg-gradient-to-r
+            from-red-400
+            to-pink-500
+            rounded-md
+            h-full
+            w-[70%]
+            relative
+            after:rounded-full
+            after:h-[12px]
+            after:w-[12px]
+            after:bg-white
+            after:absolute
+            after:top-[15%]
+            after:right-[1px]
+          "
+        ></div>
+      </div>
+      <div class="font-bold text-white flex justify-between">
+         <p>0 GB </p>
+        <p>1000 GB</p>
+      </div>
+
+    </div>
+    <div class="bg-white h-16 w-40 rounded-md flex justify-center items-center -m-10 font-bold text-lxm">
+      <p class="text-4xl text-black">185</p>
+      <p class=" text-blue-grayish "> GB LEFT</p>
+    </div>
 
 
-
-</body>
+  </body>
 </html>
