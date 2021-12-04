@@ -45,6 +45,7 @@
       flex
       items-center
       flex-col
+      lg:flex-row lg:gap-5
     "
   >
     <div
@@ -104,6 +105,7 @@
         bg-blue-dark
         h-[170px]
         w-[325px]
+        lg:w-[450px]
         flex flex-col
         my-5
         justify-center
@@ -137,16 +139,30 @@
         ></div>
       </div>
       <div class="font-bold text-white flex justify-between">
-         <p>0 GB </p>
+        <p>0 GB</p>
         <p>1000 GB</p>
       </div>
-
     </div>
-    <div class="bg-white h-16 w-40 rounded-md flex justify-center items-center -m-10 font-bold text-lxm">
+    <div
+      class="
+        bg-white
+        h-16
+        w-40
+        rounded-md
+        flex
+        justify-center
+        items-center
+        -m-10
+        font-bold
+        text-lxm
+        lg:-m-52 lg:-mt-96
+      "
+    >
       <p class="text-4xl text-black">185</p>
-      <p class=" text-blue-grayish "> GB LEFT</p>
+      <p class="text-blue-grayish">GB LEFT</p>
     </div>
-
-
+    <div
+      class="lg:w-0 lg:h-0 lg:border-l-[25px] lg:border-l-transparent lg:border-t-[25px] lg:border-t-white lg:border-solid lg:ml-[163px] lg:mt-[-96px]"
+    ></div>
   </body>
 </html>
