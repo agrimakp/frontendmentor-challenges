@@ -5,22 +5,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: {
-          pale: "hsl(243, 100%, 93%)",
-          grayish: "hsl(229, 7%, 55%)",
-          dark: "hsl(228, 56%, 26%)",
-          darkest:"hsl(229, 57%, 11%)",
-          light: "hsl(228, 45%, 44%)",
-          active: "hsl(244.5, 82.6%, 68.4%)",
-        },
+        gray: "hsl(0, 0%, 81%)",
+        grayish: "hsl(229, 7%, 55%)",
+        lightgray: "hsl(212.7, 44%, 95.1%)",
+        darkgray: "hsl(218.8, 18.9%, 35.3%)",
+        purple: "hsl(262.8, 55.5%, 51.6%)",
+        lightpurple: "hsl(264.1, 84.1%, 70.4%)",
+
       },
       fontFamily: {
-        'body': ['Raleway']
+        body: ["Barlow Semi Condensed"],
       },
       backgroundImage: {
-        'desktop-pattern': "url('../images/bg-desktop.png')",
-        'icon-folder': "url(../images/icon-folder.svg)",
-
+        "quotation-pattern": "url('../images/bg-pattern-quotation.svg')",
+        "icon-folder": "url(../images/icon-folder.svg)",
       },
     },
   },
