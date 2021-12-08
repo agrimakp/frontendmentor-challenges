@@ -1,47 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dist/styles.css" />
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/styles.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body class="bg-cyan-lightgrayish h-screen font-body flex items-center justify-center">
-  <div >
-    Bill
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body
+    class="
+      bg-cyan-lightgrayish
+      h-screen
+      font-body
+      flex
+      items-center
+      justify-center
+    "
+  >
+    <div class="">
+      <img class="py-14 m-auto" src="./images/logo.svg" />
+      <div class="bg-white border rounded-2xl p-7 flex gap-8">
+        <div class="w-1/2">
+          <div class="mb-4">
+            <label
+              class="block text-cyan-verydark text-sm font-bold mb-2"
+              for="Bill"
+            >
+              Bill
+            </label>
+            <input
+              class="
+                appearance-none
+                bg-cyan-lightgray
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              id="Bill"
+              type="text"
+              placeholder="$"
+            />
+          </div>
+          <div class="mb-4 flex flex-wrap justify-between gap-y-4">
+            <label
+              class="block text-cyan-verydark text-sm font-bold w-full"
+              for="Bill"
+            >
+              Select Tip %
+            </label>
+            <button
+              class="
+                bg-cyan-verydark
+                hover:bg-cyan-lightgrayish
+                text-white
+                min-w-[30%]
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              "
+              type="button"
+            >
+              5%
+            </button>
+            <button
+              class="
+                bg-cyan-verydark
+                hover:bg-cyan-lightgrayish
+                text-white
+                min-w-[30%]
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              "
+              type="button"
+            >
+              10%
+            </button>
+            <button
+              class="
+                bg-cyan-verydark
+                hover:bg-cyan-lightgrayish
+                text-white
+                min-w-[30%]
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              "
+              type="button"
+            >
+              15%
+            </button>
+            <button
+              class="
+                bg-cyan-verydark
+                hover:bg-cyan-lightgrayish
+                text-white
+                min-w-[30%]
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              "
+              type="button"
+            >
+              25%
+            </button>
+            <button
+              class="
+                bg-cyan-verydark
+                hover:bg-cyan-lightgrayish
+                text-white
+                min-w-[30%]
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              "
+              type="button"
+            >
+              50%
+            </button>
+            <button
+              class="
+                bg-cyan-lightgray
+                hover:bg-cyan-lightgrayish
+                text-cyan-verydark
+                min-w-[30%]
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              "
+              type="button"
+            >
+              Custom
+            </button>
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-cyan-verydark text-sm font-bold mb-2"
+              for="Bill"
+            >
+              Number of People
+            </label>
+            <input
+              class="
+                shadow
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              id="Bill"
+              type="text"
+              placeholder="0"
+            />
+          </div>
+        </div>
+        <div class="bg-cyan-verydark border rounded-xl p-7 w-1/2 font-bold">
+          <div class="flex justify-between">
+            <div class="mb-7">
+              <h4 class="text-white">Tip Amount</h4>
+              <span class="text-cyan-darkgrayish">/ person</span>
+            </div>
+            <p class="text-cyan-strong text-4xl">$0.00</p>
+          </div>
 
-    Select Tip %
-    5%
-    10%
-    15%
-    25%
-    50%
-    Custom
-
-    Number of People
-
-    Tip Amount
-    / person
-
-    Total
-    / person
-
-    Reset
-  </div>
-
-
-
-
-</body>
+          <div class="flex justify-between mb-10 font-bold">
+            <div class="mb-7">
+              <h4 class="text-white">Total</h4>
+              <span class="text-cyan-darkgrayish">/ person</span>
+            </div>
+            <p class="text-cyan-strong text-4xl">$0.00</p>
+          </div>
+          <button
+            class="
+              bg-cyan-strong
+              w-full
+              hover:bg-cyan-lightgrayish
+              text-white
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+            type="button"
+          >
+            RESET
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
