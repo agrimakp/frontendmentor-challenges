@@ -52,22 +52,32 @@
             >
               Bill
             </label>
-            <input
+            <div
               class="
-                appearance-none
-                bg-cyan-lightgray
-                rounded
-                w-full
-                py-2
-                px-3
-                text-gray-700
-                leading-tight
-                focus:outline-none focus:shadow-outline
+                relative
+                before:absolute before:top-[6px] before:left-2 before:content-['$']
               "
-              id="Bill"
-              type="text"
-              placeholder="$"
-            />
+            >
+              <input
+                class="
+                  appearance-none
+                  bg-cyan-lightgray
+                  rounded
+                  w-full
+                  py-2
+                  px-3
+                  text-right
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                  pl-10
+                  block
+                "
+                id="Bill"
+                type="text"
+                placeholder="0"
+              />
+            </div>
           </div>
           <div class="mb-4 flex flex-wrap justify-between gap-y-4">
             <label
@@ -180,12 +190,19 @@
             >
               Number of People
             </label>
+            <div
+            class="
+              relative
+              before:absolute before:w-4 before:h-4 before:top-[6px] before:top-3 before:left-2 before:bg-icon-person before:bg-no-repeat
+            "
+          >
             <input
               class="
                 shadow
                 appearance-none
                 border
                 rounded
+                text-right
                 w-full
                 py-2
                 px-3
@@ -197,6 +214,7 @@
               type="text"
               placeholder="0"
             />
+            </div>
           </div>
         </div>
         <div class="bg-cyan-verydark border rounded-xl p-7 w-1/2 font-bold">
