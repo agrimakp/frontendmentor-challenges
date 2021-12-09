@@ -55,7 +55,15 @@
             <div
               class="
                 relative
-                before:absolute before:top-[6px] before:left-2 before:content-['$']
+                hover:border
+                hover:border-solid
+                hover:border-green-500
+                hover:rounded
+                border border-solid border-transparent
+                before:absolute
+                before:top-[6px]
+                before:left-2
+                before:content-['$']
               "
             >
               <input
@@ -66,8 +74,7 @@
                   w-full
                   py-2
                   px-3
-                  text-right
-                  text-gray-700
+                  text-right text-gray-700
                   leading-tight
                   focus:outline-none focus:shadow-outline
                   pl-10
@@ -89,7 +96,7 @@
             <button
               class="
                 bg-cyan-verydark
-                hover:bg-cyan-lightgrayish
+                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
                 min-w-[30%]
                 font-bold
@@ -105,7 +112,7 @@
             <button
               class="
                 bg-cyan-verydark
-                hover:bg-cyan-lightgrayish
+                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
                 min-w-[30%]
                 font-bold
@@ -121,7 +128,7 @@
             <button
               class="
                 bg-cyan-verydark
-                hover:bg-cyan-lightgrayish
+                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
                 min-w-[30%]
                 font-bold
@@ -137,7 +144,7 @@
             <button
               class="
                 bg-cyan-verydark
-                hover:bg-cyan-lightgrayish
+                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
                 min-w-[30%]
                 font-bold
@@ -153,7 +160,7 @@
             <button
               class="
                 bg-cyan-verydark
-                hover:bg-cyan-lightgrayish
+                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
                 min-w-[30%]
                 font-bold
@@ -169,7 +176,7 @@
             <button
               class="
                 bg-cyan-lightgray
-                hover:bg-cyan-lightgrayish
+                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-cyan-verydark
                 min-w-[30%]
                 font-bold
@@ -191,29 +198,41 @@
               Number of People
             </label>
             <div
-            class="
-              relative
-              before:absolute before:w-4 before:h-4 before:top-[6px] before:top-3 before:left-2 before:bg-icon-person before:bg-no-repeat
-            "
-          >
-            <input
               class="
-                shadow
-                appearance-none
-                border
-                rounded
-                text-right
-                w-full
-                py-2
-                px-3
-                text-gray-700
-                leading-tight
-                focus:outline-none focus:shadow-outline
+                relative
+                hover:border
+                hover:border-solid
+                hover:border-red-400
+                hover:rounded
+                border border-solid border-transparent
+                before:absolute
+                before:w-4
+                before:h-4
+                before:top-[6px]
+                before:top-3
+                before:left-2
+                before:bg-icon-person
+                before:bg-no-repeat
               "
-              id="Bill"
-              type="text"
-              placeholder="0"
-            />
+            >
+              <input
+                class="
+                  shadow
+                  appearance-none
+                  border
+                  rounded
+                  text-right
+                  w-full
+                  py-2
+                  px-3
+                  text-gray-700
+                  leading-tight
+                  focus:outline-none focus:shadow-outline
+                "
+                id="Bill"
+                type="text"
+                placeholder="0"
+              />
             </div>
           </div>
         </div>
