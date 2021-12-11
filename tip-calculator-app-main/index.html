@@ -29,6 +29,9 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+      button[data-selected="true"] {
+        border: 1px solid red;
+      }
     </style>
   </head>
   <body
@@ -81,8 +84,9 @@
                   block
                 "
                 id="Bill"
-                type="text"
+                type="number"
                 placeholder="0"
+                onchange="changeBillInput(event)"
               />
             </div>
           </div>
@@ -94,7 +98,10 @@
               Select Tip %
             </label>
             <button
+              onclick="selectTip(event)"
+              data-value="5"
               class="
+                tip
                 bg-cyan-verydark
                 hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
@@ -110,7 +117,10 @@
               5%
             </button>
             <button
+              onclick="selectTip(event)"
+              data-value="10"
               class="
+                tip
                 bg-cyan-verydark
                 hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
@@ -126,7 +136,10 @@
               10%
             </button>
             <button
+              onclick="selectTip(event)"
+              data-value="15"
               class="
+                tip
                 bg-cyan-verydark
                 hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
@@ -142,7 +155,10 @@
               15%
             </button>
             <button
+              onclick="selectTip(event)"
+              data-value="25"
               class="
+                tip
                 bg-cyan-verydark
                 hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
@@ -158,7 +174,10 @@
               25%
             </button>
             <button
+              onclick="selectTip(event)"
+              data-value="50"
               class="
+                tip
                 bg-cyan-verydark
                 hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-white
@@ -174,7 +193,10 @@
               50%
             </button>
             <button
+              onclick="selectTip(event)"
+              data-value="5"
               class="
+                tip
                 bg-cyan-lightgray
                 hover:bg-cyan-lightgrayish hover:text-cyan-verydark
                 text-cyan-verydark
@@ -228,9 +250,10 @@
                   leading-tight
                   focus:outline-none focus:shadow-outline
                 "
-                id="Bill"
-                type="text"
+                id="People"
+                type="number"
                 placeholder="0"
+                onchange="changePeopleInput(event)"
               />
             </div>
           </div>
@@ -241,7 +264,7 @@
               <h4 class="text-white">Tip Amount</h4>
               <span class="text-cyan-darkgrayish">/ person</span>
             </div>
-            <p class="text-cyan-strong text-4xl">$0.00</p>
+            <p class="text-cyan-strong text-4xl" id="tip">$0.00</p>
           </div>
 
           <div class="flex justify-between mb-10 font-bold">
@@ -249,7 +272,7 @@
               <h4 class="text-white">Total</h4>
               <span class="text-cyan-darkgrayish">/ person</span>
             </div>
-            <p class="text-cyan-strong text-4xl">$0.00</p>
+            <p class="text-cyan-strong text-4xl" id="total">$0.00</p>
           </div>
           <button
             class="
@@ -264,6 +287,7 @@
               focus:outline-none focus:shadow-outline
             "
             type="button"
+            onclick="reset(event)"
           >
             RESET
           </button>
@@ -271,4 +295,78 @@
       </div>
     </div>
   </body>
+  <script>
+    let billInput = document.getElementById("Bill");
+    let peopleInput = document.getElementById("People");
+    let tipAmount = document.getElementById("tip");
+    let totalAmount = document.getElementById("total");
+
+    let tipPercentage = 0,
+      bill = 0,
+      people = 0;
+
+    function updateView() {
+      console.log(bill, people, tipPercentage);
+      let result = splitcalc(bill, people, tipPercentage);
+      tipAmount.innerHTML = result.tipPerPerson.toFixed(2);
+      totalAmount.innerHTML = result.billPerPerson.toFixed(2);
+    }
+
+    function changePeopleInput(event) {
+      people = +event.target.value;
+      // set people based on input box value
+
+      updateView();
+    }
+
+    temp = 2;
+
+    function changeBillInput(event) {
+      // set bill based on input box value
+      bill = +event.target.value;
+      updateView();
+    }
+
+    function selectTip(event) {
+      // set tip variable based on button clicked
+      tipPercentage = +event.target.dataset.value;
+
+      resetTip();
+      event.target.dataset.selected = "true";
+      updateView();
+    }
+
+    function resetTip() {
+      document
+        .querySelectorAll("button.tip")
+        .forEach((x) => (x.dataset.selected = "false"));
+    }
+
+    function reset() {
+      bill = 0;
+      people = 0;
+      tipPercentage = 0;
+
+      billInput.value = 0;
+      peopleInput.value = 0;
+
+      resetTip();
+      updateView();
+    }
+
+    // billInput.onchange = changeInput;
+    // peopleInput.onchange = changeInput;
+
+    function splitcalc(bill, people, tipPercentage) {
+      let totalTip = tipPercentage * 0.01 * bill;
+      let totalBill = bill + totalTip;
+      let tipPerPerson = people === 0 ? 0 : totalTip / people;
+      let billPerPerson = people === 0 ? 0 : totalBill / people;
+      console.log(tipPerPerson, billPerPerson);
+      return {
+        tipPerPerson: tipPerPerson,
+        billPerPerson: billPerPerson,
+      };
+    }
+  </script>
 </html>
