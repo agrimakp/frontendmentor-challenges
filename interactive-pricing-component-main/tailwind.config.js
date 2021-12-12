@@ -40,9 +40,10 @@ module.exports = {
         body: ["Manrope"],
       },
       backgroundImage: {
-        "icon-person": "url(../images/icon-person.svg)",
-        "icon-dollar": "url(../images/icon-dollar.svg)",
-        logo: "url(../images/logo.svg)",
+        "icon-check": "url(../images/icon-check.svg)",
+        "icon-slider": "url(../images/icon-slider.svg)",
+        "bg-pattern": "url(../images/bg-pattern.svg)",
+        "pattern-circles": "url(../images/pattern-circles.svg)",
       },
     },
   },
