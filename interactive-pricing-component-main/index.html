@@ -30,13 +30,167 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+
+      ul {
+        list-style-image: url('./images/icon-check.svg');
+
+      }
+
+      input[type="checkbox"] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+      }
+
+      label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 45px;
+        height: 25px;
+        background: hsl(223, 50%, 87%);
+        display: block;
+        border-radius: 100px;
+        position: relative;
+      }
+
+      label:after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 20px;
+        transition: 0.3s;
+      }
+
+      input:checked + label {
+        background: hsl(174, 77%, 80%);
+      }
+
+      input:checked + label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+      }
+
+      label:active:after {
+        width: 130px;
+      }
     </style>
   </head>
-  <body>
-    Simple, traffic-based pricing Sign-up for our 30-day trial. No credit card
-    required. Pageviews $ /month Monthly Billing Yearly Billing 25% discount
-    Unlimited websites 100% data ownership Email reports Start my trial
-    <p>-----------------------------------------------</p>
-
+  <body
+    class="
+      font-body
+      text-[14px] text-blue-grayish
+      h-screen
+      flex
+      text-center
+      justify-center
+      bg-pattern bg-no-repeat bg-gray-50
+      lg:bg-contain
+      bg-left-top
+    "
+  >
+    <div
+      class="
+        h-[200px]
+        w-[325px]
+        bg-pattern-circles bg-no-repeat bg-center
+        py-10
+        m-8
+      "
+    >
+      <div class="h-40">
+        <h1 class="text-[21px] font-bold text-blue-darkDesaturated m-2">
+          Simple, traffic-based pricing
+        </h1>
+        <p class="px-14 tracking-wider">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </div>
+      <div class="bg-white-neutral border rounded-md items-center py-8">
+        <p class="text-md font-bold">100K PAGEVIEWS</p>
+        <div class="rounded-md h-[20px] p-[7px] m-4">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="
+              w-full
+              h-2
+              border-0
+              rounded-md
+              bg-cyan-soft
+              cursor-pointer
+              appearance-none
+            "
+            id="myRange"
+          />
+        </div>
+        <div class="flex justify-center items-center my-8">
+          <p class="text-[30px] font-bold text-blue-darkDesaturated">$16.00</p>
+          <span> / month</span>
+        </div>
+        <div class="flex flex-row justify-center gap-2 my-8 text-[12px]">
+          <p>Monthly Billing</p>
+          <!-- <div>
+            <input
+              type="checkbox"
+              class="h-0 w-0 invisible checked:bg-blue-mediumGrayish1"
+            />
+            <label
+              for="switch"
+              class="
+                cursor-pointer
+                indent-3
+                w-[200px]
+                h-[100px]
+                bg-blue-mediumGrayish1
+                block
+                rounded-lg
+                checked:bg-blue-mediumGrayish1
+                relative
+                after:content[''] after:
+                absolute
+                after:
+                top-[5px]
+                after:
+                left-[5px]
+                after:
+                w-[90px]
+                after:
+                h-[90px]
+                after:
+                bg-white-neutral
+                after:
+                rounded-full
+                after:
+                ease-in
+                duration-300
+              "
+              >Toggle</label
+            >
+          </div> -->
+          <input type="checkbox" id="switch" hidden />
+          <label for="switch">Toggle</label>
+          <p>Yearly Billing</p>
+          <div
+            class="text-red-light bg-red-lightGrayish rounded-xl p-0.5 px-1.5"
+          >
+            -25%
+          </div>
+        </div>
+      </div>
+      <div class="bg-white-neutral border rounded-md items-center py-8">
+        <ul>
+          <li class="mb-2">&nbsp; websites</li>
+          <li class="mb-2">&nbsp; 100% data ownership</li>
+          <li class="mb-2">&nbsp; Email reports</li>
+        </ul>
+        <button class="bg-blue-darkDesaturated p-4 rounded-full  mt-10 px-14 text-white-neutral">Start my trial</button>
+      </div>
+    </div>
   </body>
 </html>
