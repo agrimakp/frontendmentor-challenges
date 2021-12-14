@@ -28,6 +28,25 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+      .switch-toggle {
+        float: left;
+        background: hsl(223, 31%, 20%);
+        border-radius: 10px;
+      }
+      .switch-toggle input {
+        position: absolute;
+        opacity: 0;
+      }
+      .switch-toggle input + label {
+        padding: 7px;
+        float: left;
+        color: #fff;
+        cursor: pointer;
+      }
+      .switch-toggle input:checked + label {
+        background: hsl(6, 63%, 50%);
+        border-radius: 50px;
+      }
     </style>
   </head>
   <body
@@ -46,35 +65,258 @@
         <h1>calc</h1>
         <div class="text-[13px] flex gap-6">
           <span>THEME</span>
-          <div class="toggle">1 2 3</div>
+          <!-- <div class="toggle">1 2 3</div> -->
+          <!-- <div class="switch-toggle switch-3 switch-candy ">
+            <input id="on" name="state-d" type="radio" checked="" />
+            <label for="on" onclick="" ><span class="text-blue-dark1">-</span></label>
+
+            <input id="na" name="state-d" type="radio" checked="checked" />
+            <label for="na" class="disabled" onclick=""><span class="text-blue-dark1">-</span></label>
+
+            <input id="off" name="state-d" type="radio" />
+            <label for="off" onclick="" ><span class="text-blue-dark1">-</span></label>
+          </div> -->
         </div>
       </div>
       <div class="bg-blue-veryDark rounded-lg p-5 text-right">
         <span>399,981</span>
       </div>
-      <div class="bg-blue-dark1 mt-6 rounded-lg py-5 flex flex-wrap gap-3 items-center justify-center text-blue-darkGrayish">
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">7</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">8</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">9</button>
-        <button class="bg-blue-dark2 border-0 border-b-4 border-blue-dark3 w-16 h-16 p-2 text-[16px] text-white-neutral rounded-md">DEL</button>
+      <div
+        class="
+          bg-blue-dark1
+          mt-6
+          rounded-lg
+          py-5
+          flex flex-wrap
+          gap-3
+          items-center
+          justify-center
+          text-blue-darkGrayish
+        "
+      >
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          7
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          8
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          9
+        </button>
+        <button
+          class="
+            bg-blue-dark2
+            border-0 border-b-4 border-blue-dark3
+            w-16
+            h-16
+            p-2
+            text-[16px] text-white-neutral
+            rounded-md
+          "
+        >
+          DEL
+        </button>
 
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">4</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">5</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">6</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">+</button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          4
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          5
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          6
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          +
+        </button>
 
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">1</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">2</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">3</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">-</button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          1
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          2
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          3
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          -
+        </button>
 
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">.</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">0</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">/</button>
-        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">x</button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          .
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          0
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          /
+        </button>
+        <button
+          class="
+            bg-orange-lightGrayish
+            border-0 border-b-4 border-orange-grayishOrange
+            w-16
+            h-16
+            p-2
+            rounded-md
+          "
+        >
+          x
+        </button>
 
-        <button class="bg-blue-dark2 border-0 border-b-4 border-blue-dark3 w-[140px] h-16 p-2 text-[16px] text-white-neutral rounded-md">RESET</button>
-        <button class="bg-red-normal border-0 border-b-4 border-red-dark w-[140px]  h-16 p-2 text-[16px] text-white-neutral rounded-md">=</button>
+        <button
+          class="
+            bg-blue-dark2
+            border-0 border-b-4 border-blue-dark3
+            w-[140px]
+            h-16
+            p-2
+            text-[16px] text-white-neutral
+            rounded-md
+          "
+        >
+          RESET
+        </button>
+        <button
+          class="
+            bg-red-normal
+            border-0 border-b-4 border-red-dark
+            w-[140px]
+            h-16
+            p-2
+            text-[16px] text-white-neutral
+            rounded-md
+          "
+        >
+          =
+        </button>
       </div>
     </div>
   </body>
