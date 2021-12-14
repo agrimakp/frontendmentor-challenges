@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="bg-blue-veryDark rounded-lg p-5 text-right">
-        <span>399,981</span>
+        <span id="inputDisplay">0</span>
       </div>
       <div
         class="
@@ -103,6 +103,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           7
         </button>
@@ -115,6 +116,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           8
         </button>
@@ -127,6 +129,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           9
         </button>
@@ -140,6 +143,7 @@
             text-[16px] text-white-neutral
             rounded-md
           "
+          onclick="calculate(event)"
         >
           DEL
         </button>
@@ -153,6 +157,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           4
         </button>
@@ -165,6 +170,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           5
         </button>
@@ -177,6 +183,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           6
         </button>
@@ -189,6 +196,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           +
         </button>
@@ -202,6 +210,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           1
         </button>
@@ -214,6 +223,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           2
         </button>
@@ -226,6 +236,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           3
         </button>
@@ -238,6 +249,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           -
         </button>
@@ -251,6 +263,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           .
         </button>
@@ -263,6 +276,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           0
         </button>
@@ -275,6 +289,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           /
         </button>
@@ -287,6 +302,7 @@
             p-2
             rounded-md
           "
+          onclick="calculate(event)"
         >
           x
         </button>
@@ -301,6 +317,7 @@
             text-[16px] text-white-neutral
             rounded-md
           "
+          onclick="reset(event)"
         >
           RESET
         </button>
@@ -314,10 +331,35 @@
             text-[16px] text-white-neutral
             rounded-md
           "
+          onclick="calculate(event)"
         >
           =
         </button>
       </div>
     </div>
   </body>
+  <script>
+    let input = "";
+    function calculate(event) {
+      let button = event.target.innerText;
+
+      if (button === "=" && input.length > 0) {
+        input = eval(input) + "";
+      } else if (button === "DEL") {
+        input = input.slice(0, input.length - 1);
+      } else {
+        input += button;
+      }
+      updateUI(input);
+    }
+
+    function reset(event) {
+      input = "";
+      updateUI(input);
+    }
+
+    function updateUI(input) {
+      document.getElementById("inputDisplay").innerHTML = input ? input : 0;
+    }
+  </script>
 </html>
