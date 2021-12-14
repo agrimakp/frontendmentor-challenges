@@ -1,26 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="dist/styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Calculator app</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body
+    class="
+      h-screen
+      font-body
+      text-[32px] text-white-neutral
+      flex
+      text-center
+      justify-center
+      bg-blue-desaturated
+    "
+  >
+    <div class="h-[200px] w-[325px]">
+      <div class="flex justify-between items-center py-5">
+        <h1>calc</h1>
+        <div class="text-[13px] flex gap-6">
+          <span>THEME</span>
+          <div class="toggle">1 2 3</div>
+        </div>
+      </div>
+      <div class="bg-blue-veryDark rounded-lg p-5 text-right">
+        <span>399,981</span>
+      </div>
+      <div class="bg-blue-dark1 mt-6 rounded-lg py-5 flex flex-wrap gap-3 items-center justify-center text-blue-darkGrayish">
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">7</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">8</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">9</button>
+        <button class="bg-blue-dark2 border-0 border-b-4 border-blue-dark3 w-16 h-16 p-2 text-[16px] text-white-neutral rounded-md">DEL</button>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">4</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">5</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">6</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">+</button>
 
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">1</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">2</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">3</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">-</button>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">.</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">0</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">/</button>
+        <button class="bg-orange-lightGrayish border-0 border-b-4 border-orange-grayishOrange w-16 h-16 p-2 rounded-md">x</button>
+
+        <button class="bg-blue-dark2 border-0 border-b-4 border-blue-dark3 w-[140px] h-16 p-2 text-[16px] text-white-neutral rounded-md">RESET</button>
+        <button class="bg-red-normal border-0 border-b-4 border-red-dark w-[140px]  h-16 p-2 text-[16px] text-white-neutral rounded-md">=</button>
+      </div>
+    </div>
+  </body>
 </html>
