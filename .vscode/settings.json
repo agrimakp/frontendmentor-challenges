@@ -8,5 +8,5 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
   },
-  "liveServer.settings.fullReload": true
+  "liveServer.settings.fullReload": true,
 }

@@ -32,8 +32,7 @@
       }
 
       ul {
-        list-style-image: url('./images/icon-check.svg');
-
+        list-style-image: url("./images/icon-check.svg");
       }
 
       input[type="checkbox"] {
@@ -96,6 +95,7 @@
       class="
         h-[200px]
         w-[325px]
+        md:w-[600px]
         bg-pattern-circles bg-no-repeat bg-center
         py-10
         m-8
@@ -109,14 +109,26 @@
           Sign-up for our 30-day trial. No credit card required.
         </p>
       </div>
-      <div class="bg-white-neutral border rounded-md items-center py-8">
-        <p class="text-md font-bold">100K PAGEVIEWS</p>
-        <div class="rounded-md h-[20px] p-[7px] m-4">
+      <div
+        class="
+          bg-white-neutral
+          border
+          rounded-md
+          items-center
+          py-8
+          md:flex md:flex-wrap md:justify-between md:px-12
+        "
+      >
+        <p class="text-md font-bold order-1">
+          <span id="pageViews">100</span>K PAGEVIEWS
+        </p>
+        <div class="rounded-md h-[20px] p-[7px] m-4 md:mx-0 md:w-full order-3">
           <input
             type="range"
             min="1"
             max="100"
-            value="50"
+            value="1"
+            onchange="changemultiplier(event)"
             class="
               w-full
               h-2
@@ -129,68 +141,97 @@
             id="myRange"
           />
         </div>
-        <div class="flex justify-center items-center my-8">
-          <p class="text-[30px] font-bold text-blue-darkDesaturated">$16.00</p>
+        <div class="flex justify-center items-center my-8 order-2">
+          <p class="text-[30px] font-bold text-blue-darkDesaturated">$<span id="price">16.00</span></p>
           <span> / month</span>
         </div>
-        <div class="flex flex-row justify-center gap-2 my-8 text-[12px]">
+        <div class="order-4 md:w-2"></div>
+        <div
+          class="flex flex-row justify-center gap-2 my-8 text-[12px] order-5"
+        >
           <p>Monthly Billing</p>
-          <!-- <div>
-            <input
-              type="checkbox"
-              class="h-0 w-0 invisible checked:bg-blue-mediumGrayish1"
-            />
-            <label
-              for="switch"
-              class="
-                cursor-pointer
-                indent-3
-                w-[200px]
-                h-[100px]
-                bg-blue-mediumGrayish1
-                block
-                rounded-lg
-                checked:bg-blue-mediumGrayish1
-                relative
-                after:content[''] after:
-                absolute
-                after:
-                top-[5px]
-                after:
-                left-[5px]
-                after:
-                w-[90px]
-                after:
-                h-[90px]
-                after:
-                bg-white-neutral
-                after:
-                rounded-full
-                after:
-                ease-in
-                duration-300
-              "
-              >Toggle</label
-            >
-          </div> -->
-          <input type="checkbox" id="switch" hidden />
+          <input
+            type="checkbox"
+            onchange="changeBillingCycle(event)"
+            id="switch"
+            hidden
+          />
           <label for="switch">Toggle</label>
           <p>Yearly Billing</p>
           <div
             class="text-red-light bg-red-lightGrayish rounded-xl p-0.5 px-1.5"
           >
-            -25%
+            -25% <span class="hidden md:inline">discount</span>
           </div>
         </div>
       </div>
-      <div class="bg-white-neutral border rounded-md items-center py-8">
-        <ul>
+      <div
+        class="
+          bg-white-neutral
+          border
+          rounded-md
+          md:px-16
+          py-8
+          md:flex md:flex-row md:justify-between md:gap-6
+          items-center
+          justify-center
+        "
+      >
+        <ul class="md:text-left">
           <li class="mb-2">&nbsp; websites</li>
           <li class="mb-2">&nbsp; 100% data ownership</li>
           <li class="mb-2">&nbsp; Email reports</li>
         </ul>
-        <button class="bg-blue-darkDesaturated p-4 rounded-full  mt-10 px-14 text-white-neutral">Start my trial</button>
+
+        <button
+          class="
+            bg-blue-darkDesaturated
+            p-4
+            rounded-full
+            mt-10
+            md:mt-0
+            px-14
+            text-white-neutral
+          "
+        >
+          Start my trial
+        </button>
       </div>
     </div>
   </body>
+  <script>
+    function calculatePriceLogic(
+      pageViewsMultiplier = 0,
+      discountPrcentage = 0
+    ) {
+      const total = pageViewsMultiplier * 16;
+      const discount = total * discountPrcentage * 0.01;
+      return total - discount;
+    }
+
+    function calculatePageViews(pageViewsMultiplier) {
+      return pageViewsMultiplier * 100;
+    }
+
+    let multiplier = 1, isAnnualCycle = false;
+
+    function changemultiplier(event) {
+      multiplier = +event.target.value;
+      updateUI(multiplier, isAnnualCycle);
+    }
+
+    function changeBillingCycle(event) {
+      isAnnualCycle = event.target.checked;
+      updateUI(multiplier, isAnnualCycle);
+    }
+
+    function updateUI(multiplier, isAnnualCycle) {
+      const discount = isAnnualCycle ? 25 : 0;
+      let price = calculatePriceLogic(multiplier, discount);
+      document.getElementById("price").innerHTML = price.toFixed(2);
+
+      let totalPageviews = calculatePageViews(multiplier);
+      document.getElementById("pageViews").innerHTML = totalPageviews;
+    }
+  </script>
 </html>
