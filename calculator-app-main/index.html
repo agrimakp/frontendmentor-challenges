@@ -348,7 +348,18 @@
       } else if (button === "DEL") {
         input = input.slice(0, input.length - 1);
       } else {
-        input += button;
+        if (
+          input.length > 0 &&
+          // check if end of input is an operator
+          isNaN(+input[input.length - 1]) &&
+          // check if button pressed is an operator
+          isNaN(+button)
+        ) {
+          // for cases like `3+3+-`
+          console.warn("Malformed Expression");
+        } else {
+          input += button;
+        }
       }
       updateUI(input);
     }
