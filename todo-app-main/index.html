@@ -130,9 +130,7 @@
       </div>
 
       <div class="rounded-md bg-blue-desaturated mt-4">
-        <ul class="w-full text-sm" id="list">
-
-        </ul>
+        <ul class="w-full text-sm" id="list"></ul>
         <div class="flex justify-between p-4 text-sm">
           <span>5 items left</span>
           <span>Clear Completed</span>
@@ -162,15 +160,23 @@
     </div>
   </body>
   <script>
+    window.onload = function () {
+      document.getElementById("newTodo").value = "";
+    };
 
     function addMore(event) {
       let newTodo = document.getElementById("newTodo").value;
-      document.querySelector("#list").innerHTML += ` <li class="border-b border-blue-darkGrayish p-4 round px-6">
+      if (newTodo == 0) {
+      } else {
+        document.querySelector(
+          "#list"
+        ).innerHTML += ` <li class="border-b border-blue-darkGrayish p-4 round px-6">
             <input type="checkbox" id="checkbox1" value="HTML" />
             <label class="mt-3" for="checkbox1"></label>
             <span class="ml-2" id="todo">${newTodo}</span>
-            <button class="float-right">X</button>
+            <button class="float-right delete">X</button>
           </li>`;
+      }
     }
   </script>
 </html>
