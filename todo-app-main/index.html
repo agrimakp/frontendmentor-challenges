@@ -160,28 +160,29 @@
     </div>
   </body>
   <script>
+    let todoList = [];
+
     window.onload = function () {
-      document.getElementById("newTodo").value = "";
+      todoList = JSON.parse(localStorage.getItem("todos")) || [];
       populateList();
     };
 
-    let todoList = ["Read for 1 hour", "Pick up groceries"];
+    // let todoList = ["Read for 1 hour", "Pick up groceries"];
 
-    function populateList(){
+    function populateList() {
       document.querySelector("#list").innerHTML = "";
-      todoList.forEach(function(item){
-        let newTodo = document.querySelector(
+      todoList.forEach(function (item) {
+        let newTodo = (document.querySelector(
           "#list"
         ).innerHTML += ` <li class="border-b border-blue-darkGrayish p-4 round px-6">
             <input type="checkbox" id="checkbox1" value="HTML" />
             <label class="mt-3" for="checkbox1"></label>
             <span class="ml-2" id="todo">${item}</span>
             <button class="float-right delete">X</button>
-          </li>`;
-      })
-      document.querySelector("newTodo").value = "";
+          </li>`);
+        document.getElementById("newTodo").value = "";
+      });
     }
-
 
     //add items from input
 
@@ -189,8 +190,9 @@
       let newTodo = document.getElementById("newTodo").value;
       if (newTodo == 0) {
       } else {
-       todoList.push(newTodo);
-       populateList();
+        todoList.push(newTodo);
+        localStorage.setItem("todos", JSON.stringify(todoList));
+        populateList();
       }
     }
   </script>
