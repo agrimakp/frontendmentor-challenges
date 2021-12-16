@@ -5,6 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        blue : {
+          veryDark: "hsl(235, 21%, 11%)",
+          desaturated: "hsl(235, 24%, 19%)",
+          grayish: "hsl(234, 39%, 85%)",
+          darkGrayish: "hsl(234, 11%, 52%)",
+        }
 
 
 
