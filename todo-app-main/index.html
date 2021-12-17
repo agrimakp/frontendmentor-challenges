@@ -136,7 +136,7 @@
         <ul class="w-full text-sm" id="list"></ul>
         <div class="flex justify-between p-4 text-sm">
           <p><span id="itemsLeft"></span> items left</p>
-          <span>Clear Completed</span>
+          <button onclick="clearCompleted(event)">Clear Completed</button>
         </div>
       </div>
       <div
@@ -203,13 +203,12 @@
     function populateList() {
       document.querySelector("#list").innerHTML = "";
 
-
+      let activeList = getActive();
       let printingList = todoList;
-      document.querySelector("#itemsLeft").innerHTML = getActive().length;
+      document.querySelector("#itemsLeft").innerHTML = activeList.length;
 
       if (currentFilter === "Active") {
-        printingList = getActive();
-
+        printingList = activeList;
       } else if (currentFilter === "Completed") {
         printingList = getCompleted();
         document.querySelector("#itemsLeft").innerHTML = 0;
@@ -275,6 +274,10 @@
         }
       });
       return temp;
+    }
+    function clearCompleted(event) {
+      todoList = getActive();
+      populateList();
     }
   </script>
 </html>
