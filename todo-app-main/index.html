@@ -135,7 +135,7 @@
       <div class="rounded-md bg-blue-desaturated mt-4">
         <ul class="w-full text-sm" id="list"></ul>
         <div class="flex justify-between p-4 text-sm">
-          <span>5 items left</span>
+          <p><span id="itemsLeft"></span> items left</p>
           <span>Clear Completed</span>
         </div>
       </div>
@@ -203,12 +203,16 @@
     function populateList() {
       document.querySelector("#list").innerHTML = "";
 
+
       let printingList = todoList;
+      document.querySelector("#itemsLeft").innerHTML = getActive().length;
 
       if (currentFilter === "Active") {
         printingList = getActive();
+
       } else if (currentFilter === "Completed") {
         printingList = getCompleted();
+        document.querySelector("#itemsLeft").innerHTML = 0;
       }
 
       printingList.forEach(function (item, index) {
