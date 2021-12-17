@@ -235,7 +235,7 @@
       let newTodo = document.getElementById("newTodo").value;
       if (newTodo == "") {
       } else {
-        let todo = { name: newTodo, checked: true };
+        let todo = { name: newTodo, checked: false };
         todoList.push(todo);
         store();
         populateList();
@@ -278,6 +278,7 @@
     function clearCompleted(event) {
       todoList = getActive();
       populateList();
+      store();
     }
   </script>
 </html>
