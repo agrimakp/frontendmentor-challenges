@@ -70,6 +70,9 @@
       .round input[type="checkbox"]:checked + label:after {
         opacity: 1;
       }
+      a.active {
+        color: white;
+      }
     </style>
   </head>
   <body
@@ -150,9 +153,27 @@
           font-bold
         "
       >
-        <a href="#">All</a>
-        <a href="#">Active</a>
-        <a href="#">Completed</a>
+        <a
+          href="#all"
+          class="active active:text-white focus:text-white hover::text-white"
+          data-all="All"
+          onclick="active(event)"
+          >All</a
+        >
+        <a
+          href="#active"
+          class="active:text-white focus:text-white hover::text-white"
+          data-active="Active"
+          onclick="active(event)"
+          >Active</a
+        >
+        <a
+          href="#completed"
+          class="active:text-white focus:text-white hover::text-white"
+          data-completed="Completed"
+          onclick="active(event)"
+          >Completed</a
+        >
       </div>
       <div class="my-10 text-sm flex justify-center">
         <p>Drag and drop to reorder list</p>
@@ -161,24 +182,45 @@
   </body>
   <script>
     let todoList = [];
+    let currentFilter = "All";
+
+    function active(event) {
+      currentFilter = event.target.innerText;
+      document.querySelector(".active").classList.remove("active");
+      event.target.classList.add("active");
+      populateList();
+    }
 
     window.onload = function () {
       todoList = JSON.parse(localStorage.getItem("todos")) || [];
       populateList();
     };
 
-    // let todoList = ["Read for 1 hour", "Pick up groceries"];
+    function store() {
+      localStorage.setItem("todos", JSON.stringify(todoList));
+    }
 
     function populateList() {
       document.querySelector("#list").innerHTML = "";
-      todoList.forEach(function (item) {
+
+      let printingList = todoList;
+
+      if (currentFilter === "Active") {
+        printingList = getActive();
+      } else if (currentFilter === "Completed") {
+        printingList = getCompleted();
+      }
+
+      printingList.forEach(function (item, index) {
         let newTodo = (document.querySelector(
           "#list"
         ).innerHTML += ` <li class="border-b border-blue-darkGrayish p-4 round px-6">
-            <input type="checkbox" id="checkbox1" value="HTML" />
-            <label class="mt-3" for="checkbox1"></label>
-            <span class="ml-2" id="todo">${item}</span>
-            <button class="float-right delete">X</button>
+            <input type="checkbox" onclick="isChecked(event)" data-index = ${index} id="checkbox${index}" value="HTML" ${
+          item.checked ? "checked" : ""
+        }/>
+            <label class="mt-3" for="checkbox${index}"></label>
+            <span class="ml-2" id="todo">${item.name}</span>
+            <button class="float-right" data-index = ${index} onclick="deleteList(event)">X</button>
           </li>`);
         document.getElementById("newTodo").value = "";
       });
@@ -188,12 +230,47 @@
 
     function addMore(event) {
       let newTodo = document.getElementById("newTodo").value;
-      if (newTodo == 0) {
+      if (newTodo == "") {
       } else {
-        todoList.push(newTodo);
-        localStorage.setItem("todos", JSON.stringify(todoList));
+        let todo = { name: newTodo, checked: true };
+        todoList.push(todo);
+        store();
         populateList();
       }
+    }
+
+    function isChecked(event) {
+      let checked = event.target.checked;
+      let index = event.target.dataset.index;
+      todoList[index].checked = checked;
+      store();
+    }
+
+    function deleteList(event) {
+      let index = event.target.dataset.index;
+      todoList.splice(index, 1);
+      store();
+      populateList();
+    }
+
+    function getActive() {
+      let temp = [];
+      todoList.forEach(function (item) {
+        if (item.checked == false) {
+          temp.push(item);
+        }
+      });
+      return temp;
+    }
+
+    function getCompleted() {
+      let temp = [];
+      todoList.forEach(function (item) {
+        if (item.checked == true) {
+          temp.push(item);
+        }
+      });
+      return temp;
     }
   </script>
 </html>
