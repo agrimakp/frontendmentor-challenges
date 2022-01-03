@@ -1,9 +1,19 @@
+import { TipCalculator } from "./components/TipCalculator";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>hello world</p>
-      </header>
+    <div
+      className="bg-cyan-lightgrayish
+    h-screen
+    font-body
+    flex
+    items-center
+    justify-center
+    gap-12
+    flex-col"
+    >
+      <img className="w-16 h-auto" src="./images/logo.svg" />
+      <TipCalculator />
     </div>
   );
 }
