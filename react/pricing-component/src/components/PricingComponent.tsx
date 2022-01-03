@@ -1,4 +1,21 @@
+import React, { ChangeEvent, useState } from "react";
+import { calculatePageViews, calculatePriceLogic } from "../pricingLogic";
 export function PricingComponent() {
+  const [multiplier, setMultiplier] = useState(1);
+  const [isAnnualCycle, setIsAnnualCycle] = useState(false);
+
+  const changemultiplier = (e: any) => {
+    setMultiplier(+e.target.value);
+  };
+  const changeBillingCycle = () => {
+    setIsAnnualCycle(!isAnnualCycle);
+  }
+
+
+  const discount = isAnnualCycle ? 25 : 0;
+  let price = calculatePriceLogic(multiplier, discount);
+  let pageView = calculatePageViews(multiplier)
+
   return (
     <>
       <div
@@ -12,15 +29,15 @@ export function PricingComponent() {
         "
       >
         <p className="text-md font-bold order-1">
-          <span id="pageViews">100</span>K PAGEVIEWS
+          <span id="pageViews">{pageView}</span>K PAGEVIEWS
         </p>
         <div className="rounded-md h-[20px] p-[7px] m-4 md:mx-0 md:w-full order-3">
           <input
             type="range"
             min="1"
             max="100"
-            value="1"
-            // onchange="changemultiplier(event)"
+            value={multiplier}
+            onChange={changemultiplier}
             className="
               w-full
               h-2
@@ -35,7 +52,7 @@ export function PricingComponent() {
         </div>
         <div className="flex justify-center items-center my-8 order-2">
           <p className="text-[30px] font-bold text-blue-darkDesaturated">
-            $<span id="price">16.00</span>
+            $<span id="price">{price.toFixed(2)}</span>
           </p>
           <span> / month</span>
         </div>
@@ -44,7 +61,7 @@ export function PricingComponent() {
           <p>Monthly Billing</p>
           <input
             type="checkbox"
-            // onchange="changeBillingCycle(event)"
+            onChange={changeBillingCycle}
             id="switch"
             hidden
           />
