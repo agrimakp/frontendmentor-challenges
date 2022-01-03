@@ -1,10 +1,8 @@
-import { HelloWorld } from "./components/HelloWorld";
-
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <HelloWorld />
+        <p>hello world</p>
       </header>
     </div>
   );
