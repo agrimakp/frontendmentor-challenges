@@ -2,6 +2,7 @@ import { InputBox } from "./InputBox";
 import dollarIcon from "../images/icon-dollar.svg";
 import personIcon from "../images/icon-person.svg";
 import { Button } from "./Button";
+import { DisplayComponent } from "./DisplayComponent";
 
 export function TipCalculator() {
   return (
@@ -17,144 +18,35 @@ export function TipCalculator() {
           >
             Select Tip %
           </label>
-          <Button/>
-          <button
-            // onClick="selectTip"
-            data-value="10"
-            className="
-                tip
-                bg-cyan-verydark
-                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
-                text-white
-                min-w-[30%]
-                font-bold
-                py-2
-                px-4
-                rounded
-                focus:outline-none focus:shadow-outline
-              "
-            type="button"
-          >
-            10%
-          </button>
-          <button
-            // onClick="selectTip"
-            data-value="15"
-            className="
-                tip
-                bg-cyan-verydark
-                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
-                text-white
-                min-w-[30%]
-                font-bold
-                py-2
-                px-4
-                rounded
-                focus:outline-none focus:shadow-outline
-              "
-            type="button"
-          >
-            15%
-          </button>
-          <button
-            // onClick="selectTip"
-            data-value="25"
-            className="
-                tip
-                bg-cyan-verydark
-                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
-                text-white
-                min-w-[30%]
-                font-bold
-                py-2
-                px-4
-                rounded
-                focus:outline-none focus:shadow-outline
-              "
-            type="button"
-          >
-            25%
-          </button>
-          <button
-            // onClick="selectTip"
-            data-value="50"
-            className="
-                tip
-                bg-cyan-verydark
-                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
-                text-white
-                min-w-[30%]
-                font-bold
-                py-2
-                px-4
-                rounded
-                focus:outline-none focus:shadow-outline
-              "
-            type="button"
-          >
-            50%
-          </button>
-          <button
-            // onClick="selectTip"
-            data-value="5"
-            className="
-                tip
-                bg-cyan-lightgray
-                hover:bg-cyan-lightgrayish hover:text-cyan-verydark
-                text-cyan-verydark
-                min-w-[30%]
-                font-bold
-                py-2
-                px-4
-                rounded
-                focus:outline-none focus:shadow-outline
-              "
-            type="button"
-          >
-            Custom
-          </button>
+          <Button title="5%" dataValue={5} />
+          <Button title="10%" dataValue={10} />
+          <Button title="15%" dataValue={15} />
+          <Button title="25%" dataValue={25} />
+          <Button title="50%" dataValue={50} />
+          <Button
+            title="Custom"
+            dataValue={5}
+            className="bg-cyan-lightgray
+            hover:bg-cyan-lightgrayish
+            hover:text-cyan-verydark
+            text-cyan-verydark"
+          />
         </div>
         <div className="mb-4">
           <InputBox name="Number of people" icon={personIcon} placeHolder="0" />
         </div>
       </div>
       <div className="bg-cyan-verydark border rounded-xl p-7 w-1/2 font-bold">
-        <div className="flex justify-between">
-          <div className="mb-7">
-            <h4 className="text-white">Tip Amount</h4>
-            <span className="text-cyan-darkgrayish">/ person</span>
-          </div>
-          <p className="text-cyan-strong text-4xl" id="tip">
-            $0.00
-          </p>
-        </div>
+        <DisplayComponent title="Tip Amount" subTitle="/ person" price={0} />
+        <DisplayComponent title="Total" subTitle="/ person" price={0} />
 
-        <div className="flex justify-between mb-10 font-bold">
-          <div className="mb-7">
-            <h4 className="text-white">Total</h4>
-            <span className="text-cyan-darkgrayish">/ person</span>
-          </div>
-          <p className="text-cyan-strong text-4xl" id="total">
-            $0.00
-          </p>
-        </div>
-        <button
-          className="
-              bg-cyan-strong
-              w-full
-              hover:bg-cyan-lightgrayish
-              text-white
-              font-bold
-              py-2
-              px-4
-              rounded
-              focus:outline-none focus:shadow-outline
-            "
-          type="button"
-          // onClick="reset"
-        >
-          RESET
-        </button>
+        <Button
+          title="RESET"
+          className="bg-cyan-strong
+          w-full
+          hover:bg-cyan-lightgrayish
+          hover:text-white  mt-10"
+        />
       </div>
     </div>
   );
