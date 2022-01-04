@@ -5,6 +5,7 @@ import { Button } from "./Button";
 import { DisplayComponent } from "./DisplayComponent";
 import { useState } from "react";
 import React from "react";
+import { CalculationsLogic } from "../CalculationsLogic";
 
 export function TipCalculator() {
   const [bill, setBill] = useState(0);
@@ -18,6 +19,7 @@ export function TipCalculator() {
   const changePeopleInput = (e: any) => {
     setPeople(+e.target.value);
   };
+  const result = CalculationsLogic(bill, people, tip);
 
   return (
     <div className="bg-white border rounded-2xl p-7 flex gap-8">
@@ -81,14 +83,14 @@ export function TipCalculator() {
             name="Number of people"
             icon={personIcon}
             placeHolder="0"
-            value={0}
+            value={people}
             onChange={changePeopleInput}
           />
         </div>
       </div>
       <div className="bg-cyan-verydark border rounded-xl p-7 w-1/2 font-bold">
-        <DisplayComponent title="Tip Amount" subTitle="/ person" price={0} />
-        <DisplayComponent title="Total" subTitle="/ person" price={0} />
+        <DisplayComponent title="Tip Amount" subTitle="/ person" price={result.tipPerPerson} />
+        <DisplayComponent title="Total" subTitle="/ person" price={result.billPerPerson} />
 
         <Button
           title="RESET"
