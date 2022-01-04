@@ -4,19 +4,20 @@ import personIcon from "../images/icon-person.svg";
 import { Button } from "./Button";
 import { DisplayComponent } from "./DisplayComponent";
 import { useState } from "react";
+import React from "react";
 
 export function TipCalculator() {
   const [bill, setBill] = useState(0);
   const [people, setPeople] = useState(0);
+  const [tip, setTip] = useState(0);
 
-  const changeBillInput = (e:any) => {
+  const changeBillInput = (e: any) => {
     setBill(+e.target.value);
   };
 
-  const changePeopleInput = (e:any) => {
+  const changePeopleInput = (e: any) => {
     setPeople(+e.target.value);
-  }
-
+  };
 
   return (
     <div className="bg-white border rounded-2xl p-7 flex gap-8">
@@ -37,14 +38,38 @@ export function TipCalculator() {
           >
             Select Tip %
           </label>
-          <Button title="5%" dataValue={5} />
-          <Button title="10%" dataValue={10} />
-          <Button title="15%" dataValue={15} />
-          <Button title="25%" dataValue={25} />
-          <Button title="50%" dataValue={50} />
+          <Button
+            title="5%"
+            onClick={() => {
+              setTip(5);
+            }}
+          />
+          <Button
+            title="10%"
+            onClick={() => {
+              setTip(10);
+            }}
+          />
+          <Button
+            title="15%"
+            onClick={() => {
+              setTip(15);
+            }}
+          />
+          <Button
+            title="25%"
+            onClick={() => {
+              setTip(25);
+            }}
+          />
+          <Button
+            title="50%"
+            onClick={() => {
+              setTip(50);
+            }}
+          />
           <Button
             title="Custom"
-            dataValue={5}
             className="bg-cyan-lightgray
             hover:bg-cyan-lightgrayish
             hover:text-cyan-verydark

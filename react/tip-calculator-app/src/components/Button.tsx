@@ -1,13 +1,12 @@
 type PropsType = {
   title: string;
-  dataValue?: number;
   className?: string;
+  onClick?: Function;
 };
 export function Button(props: PropsType) {
   return (
     <button
-      // onClick="selectTip"
-      data-value={props.dataValue}
+      onClick={props.onClick as any}
       className={`
                 tip
                 bg-cyan-verydark
