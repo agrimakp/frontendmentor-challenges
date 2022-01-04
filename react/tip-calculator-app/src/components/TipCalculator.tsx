@@ -3,13 +3,32 @@ import dollarIcon from "../images/icon-dollar.svg";
 import personIcon from "../images/icon-person.svg";
 import { Button } from "./Button";
 import { DisplayComponent } from "./DisplayComponent";
+import { useState } from "react";
 
 export function TipCalculator() {
+  const [bill, setBill] = useState(0);
+  const [people, setPeople] = useState(0);
+
+  const changeBillInput = (e:any) => {
+    setBill(+e.target.value);
+  };
+
+  const changePeopleInput = (e:any) => {
+    setPeople(+e.target.value);
+  }
+
+
   return (
     <div className="bg-white border rounded-2xl p-7 flex gap-8">
       <div className="w-1/2">
         <div className="mb-4">
-          <InputBox name="Bill" icon={dollarIcon} placeHolder="0" />
+          <InputBox
+            name="Bill"
+            icon={dollarIcon}
+            placeHolder="0"
+            value={bill}
+            onChange={changeBillInput}
+          />
         </div>
         <div className="mb-4 flex flex-wrap justify-between gap-y-4">
           <label
@@ -33,7 +52,13 @@ export function TipCalculator() {
           />
         </div>
         <div className="mb-4">
-          <InputBox name="Number of people" icon={personIcon} placeHolder="0" />
+          <InputBox
+            name="Number of people"
+            icon={personIcon}
+            placeHolder="0"
+            value={0}
+            onChange={changePeopleInput}
+          />
         </div>
       </div>
       <div className="bg-cyan-verydark border rounded-xl p-7 w-1/2 font-bold">

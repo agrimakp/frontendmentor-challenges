@@ -3,6 +3,8 @@ type PropTypes = {
   name: string;
   icon: string;
   placeHolder: string;
+  onChange?: Function;
+  value: number;
 };
 export function InputBox(props: PropTypes) {
   return (
@@ -46,8 +48,9 @@ export function InputBox(props: PropTypes) {
     "
           id={props.name}
           type="number"
+          value={props.value}
           placeholder={props.placeHolder}
-          // onChange="changeBillInput"
+          onChange={props.onChange as any}
         />
       </div>
     </>
