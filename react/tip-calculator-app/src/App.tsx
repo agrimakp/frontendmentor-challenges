@@ -1,4 +1,5 @@
 import { TipCalculator } from "./components/TipCalculator";
+import logo from "./images/logo.svg";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
     gap-12
     flex-col"
     >
-      <img className="w-16 h-auto" src="./images/logo.svg" />
+      <img className="w-16 h-auto" src={logo} />
       <TipCalculator />
     </div>
   );
