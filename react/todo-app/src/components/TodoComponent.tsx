@@ -24,9 +24,9 @@ export function TodoComponent() {
         inline-block
       "
         ></span>
-        <InputBox/>
+        <InputBox />
       </div>
-      <div className="rounded-md bg-blue-desaturated mt-4">
+      <div className="rounded-md bg-blue-desaturated mt-4 lg:hidden">
         <ul className="w-full text-sm" id="list"></ul>
         <div className="flex justify-between p-4 text-sm">
           <p>
@@ -47,12 +47,19 @@ export function TodoComponent() {
           mt-4
           p-4
           font-bold
+          lg:justify-between
         "
       >
-        <Button title="All" className="active" />
-        <Button title="Active"  />
-        <Button title="Completed" />
+        <aside className="hidden lg:block ">
+          <span id="itemsLeft"></span> items left
+        </aside>
+        <div className="flex gap-3">
+          <Button title="All" className="text-white" />
+          <Button title="Active" />
+          <Button title="Completed" />
+        </div>
 
+        <Button className="hidden lg:block" title="Clear Completed" />
       </div>
       <div className="my-10 text-sm flex justify-center">
         <p>Drag and drop to reorder list</p>

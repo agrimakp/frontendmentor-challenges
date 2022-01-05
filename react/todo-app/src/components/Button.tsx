@@ -6,13 +6,12 @@ type propsType = {
 export function Button(props: propsType){
 
   return (
-    <a
-          href={`#${props.title}`}
+    <button
           className={`active:text-white focus:text-white hover::text-white ${props.className}`}
           data-all="{props.title}"
           onClick={props.onClick as any}
         >
           {props.title}
-        </a>
+        </button>
   );
 }
