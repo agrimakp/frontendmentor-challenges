@@ -142,7 +142,7 @@ export function TodoComponent() {
         "
       >
         <aside className="hidden lg:block ">
-          <span id="itemsLeft"></span> items left
+          <span id="itemsLeft">{activeItemCount}</span> items left
         </aside>
         <div className="flex gap-3">
           <Button
@@ -162,7 +162,7 @@ export function TodoComponent() {
           />
         </div>
 
-        <Button className="hidden lg:block" title="Clear Completed" />
+        <Button className="hidden lg:block" onClick={clearCompleted} title="Clear Completed" />
       </div>
       <div className="my-10 text-sm flex justify-center">
         <p>Drag and drop to reorder list</p>
