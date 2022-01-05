@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Button } from "./Button";
 import { InputBox } from "./InputBox";
-import { List } from "./List";
+import { ListItem } from "./ListItem";
 
 type Todo = { name: string; checked: boolean };
 
 export function TodoComponent() {
   const [newtodo, setNewtodo] = useState("");
   const [todoList, setTodoList] = useState<Todo[]>([]);
+  const [currentFilter, setCurrentFilter] = useState("");
 
   // add items from input
   const onChangeNewTodoInput = (e: any) => {
@@ -16,13 +17,58 @@ export function TodoComponent() {
 
   const addNewTodo = (e: any) => {
     e.preventDefault();
-    console.log(e);
     const newTodoList = todoList.slice();
-    newTodoList.push({ name: newtodo, checked: false });[{dhf:"",}]
+    newTodoList.push({ name: newtodo, checked: false });
     setTodoList(newTodoList);
   };
 
-  console.log(todoList);
+  const onChecked = (e: any, index: number) => {
+    const newTodoList = todoList.slice();
+    newTodoList[index].checked = e.target.checked;
+    setTodoList(newTodoList);
+  };
+
+  const onDelete = (e: any, index: number) => {
+    const newTodoList = todoList.slice();
+    newTodoList.splice(index, 1);
+    setTodoList(newTodoList);
+  };
+
+  // let filteredList = [] as Todo[];
+  // todoList.forEach((item) => {
+  //   if (currentFilter == "active") {
+  //     if (item.checked == false) {
+  //       filteredList.push(item);
+  //     }
+  //   } else if (currentFilter === "completed") {
+  //     if (item.checked == true) {
+  //       filteredList.push(item);
+  //     }
+  //   } else {
+  //     filteredList.push(item);
+  //   }
+  // });
+
+  // fliter all 3 states
+  const filteredList = todoList.filter((item) => {
+    if (currentFilter == "active") {
+      if (item.checked == false) {
+        return true;
+      }
+    } else if (currentFilter === "completed") {
+      if (item.checked == true) {
+        return true;
+      }
+    } else {
+      return true;
+    }
+  });
+
+
+
+  const activeItemCount = todoList.filter((item) => !item.checked).length;
+  const clearCompleted = () =>
+    setTodoList(todoList.filter((item) => !item.checked));
 
   return (
     <>
@@ -48,6 +94,7 @@ export function TodoComponent() {
         ></span>
         <form onSubmit={addNewTodo}>
           <InputBox
+            type="text"
             name="Todo"
             value={newtodo}
             placeholder="Create a new todo..."
@@ -58,15 +105,25 @@ export function TodoComponent() {
       </div>
       <div className="rounded-md bg-blue-desaturated mt-4 ">
         <ul className="w-full text-sm" id="list">
-          {todoList.map((x, i) => (
-            <List title={x.name} isChecked={x.checked} index={i}/>
+          {filteredList.map((x, i) => (
+            <ListItem
+              title={x.name}
+              isChecked={x.checked}
+              index={i}
+              onCheck={(e: any) => {
+                onChecked(e, i);
+              }}
+              onDelete={(e: any) => {
+                onDelete(e, i);
+              }}
+            />
           ))}
         </ul>
         <div className="flex justify-between p-4 text-sm lg:hidden">
           <p>
-            <span id="itemsLeft"></span> items left
+            <span id="itemsLeft">{activeItemCount}</span> items left
           </p>
-          <button>Clear Completed</button>
+          <button onClick={clearCompleted}>Clear Completed</button>
         </div>
       </div>
       <div
@@ -88,9 +145,21 @@ export function TodoComponent() {
           <span id="itemsLeft"></span> items left
         </aside>
         <div className="flex gap-3">
-          <Button title="All" className="text-white" />
-          <Button title="Active" />
-          <Button title="Completed" />
+          <Button
+            title="All"
+            className={currentFilter === "all" ? "text-white" : ""}
+            onClick={() => setCurrentFilter("all")}
+          />
+          <Button
+            title="Active"
+            className={currentFilter === "active" ? "text-white" : ""}
+            onClick={() => setCurrentFilter("active")}
+          />
+          <Button
+            title="Completed"
+            className={currentFilter === "completed" ? "text-white" : ""}
+            onClick={() => setCurrentFilter("completed")}
+          />
         </div>
 
         <Button className="hidden lg:block" title="Clear Completed" />

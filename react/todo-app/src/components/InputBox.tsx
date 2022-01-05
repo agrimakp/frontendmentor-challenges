@@ -5,12 +5,13 @@ type PropType = {
   placeholder: string;
   className?: string;
   id?: string;
+  type?: string;
 };
 export function InputBox(props: PropType) {
   return (
     <input
       className={`bg-blue-desaturated text-sm ml-2 outline-none ${props.className}`}
-      type="text"
+      type={props.type}
       name={props.name}
       value={props.value}
       placeholder={props.placeholder}
