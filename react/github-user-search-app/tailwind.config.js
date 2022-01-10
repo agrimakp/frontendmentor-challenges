@@ -22,6 +22,7 @@ module.exports = {
         "icon-sun" : "url(../assets/icon-sun.svg)",
         "icon-twitter" : "url(../assets/icon-twitter.svg)",
         "icon-website" : "url(../assets/icon-website.svg)",
+        "profile-pic" : "url(../assets/Bitmap.png)",
       },
     },
   },
