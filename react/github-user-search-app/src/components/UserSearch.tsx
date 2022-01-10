@@ -1,11 +1,15 @@
-export function UserSearch(){
-  return <p>user serach</p>
-//   Search GitHub username...
-// Search
+import { SearchBox } from "./SearchBox";
 
-// Joined
+export function UserSearch() {
+  return (
+    //   Search GitHub username...
+    <SearchBox />
+    // Search
 
-// Repos
-// Followers
-// Following
+    // Joined
+
+    // Repos
+    // Followers
+    // Following
+  );
 }

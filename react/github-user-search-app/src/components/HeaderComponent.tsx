@@ -1,6 +1,6 @@
 export function HeaderComponent() {
   return (
-    <div className="flex justify-between h-[38px]">
+    <div className="flex justify-between h-[38px] m-4">
       <h1 className="font-bold">devfinder</h1>
 
       <div className="flex gap-2">
