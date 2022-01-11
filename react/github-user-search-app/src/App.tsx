@@ -13,14 +13,15 @@ function App() {
     text-[15px]
     font-body"
     >
-      <div className="w-[730px] flex flex-col gap-4">
+      <div className="w-[375px] flex flex-col gap-4">
         <HeaderComponent />
         <UserSearch />
         <UserProfile
           name="The Octocat"
           joinedAt="Joined 25 Jan 2011"
           userName="@octocat"
-          bio="This profile has no bio"
+          bio="Lorem ipsum dolor sit amet,
+          consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
         />
       </div>
     </div>
