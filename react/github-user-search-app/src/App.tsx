@@ -13,7 +13,7 @@ function App() {
     text-[15px]
     font-body"
     >
-      <div className="w-[375px] flex flex-col gap-4">
+      <div className="w-[375px] lg:w-[730px] flex flex-col gap-4">
         <HeaderComponent />
         <UserSearch />
         <UserProfile
