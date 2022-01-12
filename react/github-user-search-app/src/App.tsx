@@ -22,6 +22,13 @@ function App() {
           userName="@octocat"
           bio="Lorem ipsum dolor sit amet,
           consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+          followerCount={3938}
+          followingCount={9}
+          repositoryCount={8}
+          location="San Francisco"
+          organisation="@github"
+          twitterHandle=""
+          website="https://github.blog"
         />
       </div>
     </div>
