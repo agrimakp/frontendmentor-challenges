@@ -34,8 +34,8 @@ function App() {
   const [userDetails, setUserDetails] = useState<any>(null);
 
   const onSearch = async (name: string) => {
-    const userInfo = await getUserInfo(name);
-    setUserDetails(userInfo);
+    const response = await getUserInfo(name);
+    setUserDetails(response);
   };
 
   return (

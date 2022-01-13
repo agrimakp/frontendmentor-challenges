@@ -92,13 +92,13 @@ export function UserProfile(prop: PropsTypes) {
           lg:grid lg:grid-cols-[200px_200px] gap-2 gap-x-14"
           >
             <Link
-              title={prop.location}
-              className="lg:order-1"
+              title={prop.location || "Not Available"}
+              className={`lg:order-1 ${prop.location ? "" : `opacity-50`}`}
               iconName="bg-icon-location"
             />
             <Link
-              title={prop.website}
-              className="lg:order-3"
+              title={prop.website || "Not Available"}
+              className={`lg:order-3 ${prop.website ? "" : `opacity-50`}`}
               iconName="bg-icon-website"
             />
             <Link
@@ -107,8 +107,8 @@ export function UserProfile(prop: PropsTypes) {
               iconName="bg-icon-twitter"
             />
             <Link
-              title={prop.organisation}
-              className="lg:order-4"
+              title={prop.organisation || "Not Available"}
+              className={`lg:order-4 ${prop.organisation ? "" : `opacity-50`}`}
               iconName="bg-icon-company"
             />
           </div>
