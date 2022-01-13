@@ -12,6 +12,7 @@ type PropsTypes = {
   website: string;
   twitterHandle: string;
   organisation: string;
+  avatarUrl?: string;
 };
 
 export function UserProfile(prop: PropsTypes) {
@@ -22,8 +23,7 @@ export function UserProfile(prop: PropsTypes) {
       lg:grid-cols-[180px_480px] grid-rows-1"
       >
         <div
-          className="bg-profile-pic
-            bg-no-repeat
+          className="
             lg:bg-[length:150px_150px]
             bg-[length:80px_80px]
             items-center
@@ -31,7 +31,9 @@ export function UserProfile(prop: PropsTypes) {
             lg:h-[170px] lg:w-[170px]
             row-span-2
             "
-        ></div>
+        >
+          <img src={prop.avatarUrl} alt="avatar" className="rounded-full" />
+        </div>
 
         <div
           className="flex flex-col gap-1
@@ -85,8 +87,10 @@ export function UserProfile(prop: PropsTypes) {
               </span>
             </div>
           </div>
-          <div className="mt-8 flex flex-col
-          lg:grid lg:grid-cols-[200px_200px] gap-2 gap-x-14">
+          <div
+            className="mt-8 flex flex-col
+          lg:grid lg:grid-cols-[200px_200px] gap-2 gap-x-14"
+          >
             <Link
               title={prop.location}
               className="lg:order-1"

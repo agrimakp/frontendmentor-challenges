@@ -3,33 +3,39 @@ import { UserSearch } from "./components/UserSearch";
 import { UserProfile } from "./components/UserProfile";
 import { useState } from "react";
 
-const getUserInfo = (userName: string) => {
+const getUserInfo = async (userName: string) => {
+  const response = await fetch("https://api.github.com/users/" + userName);
+  const userInfo = await response.json();
+
+  if (userInfo.message) {
+    return { message: userInfo.message };
+  }
+
   // contact github database with userName
   // fetch user details object from github database
   // return that object
   return {
-    name: "The Octocat",
-    joinedAt: "Joined 25 Jan 2011",
-    userName: "@octocat",
-    bio: `Lorem ipsum dolor sit amet,
-          consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.`,
-    followerCount: 3938,
-    followingCount: 9,
-    repositoryCount: 8,
-    location: "San Francisco",
-    organisation: "@github",
-    twitterHandle: "",
-    website: "https://github.blog",
+    name: userInfo.name,
+    joinedAt: userInfo.created_at,
+    userName: userInfo.login,
+    bio: userInfo.bio,
+    followerCount: userInfo.followers,
+    followingCount: userInfo.following,
+    repositoryCount: userInfo.public_repos,
+    location: userInfo.location,
+    organisation: userInfo.company,
+    twitterHandle: userInfo.twitter_username,
+    website: userInfo.blog,
+    avatarUrl: userInfo.avatar_url,
   };
 };
 
 function App() {
   const [userDetails, setUserDetails] = useState<any>(null);
 
-  const onSearch = (name: string) => {
-    const xx = getUserInfo(name);
-    setUserDetails(xx);
-    // userDetails = xx;
+  const onSearch = async (name: string) => {
+    const userInfo = await getUserInfo(name);
+    setUserDetails(userInfo);
   };
 
   return (
@@ -44,8 +50,15 @@ function App() {
     >
       <div className="w-[375px] lg:w-[730px] flex flex-col gap-4">
         <HeaderComponent />
-        <UserSearch onSubmit={onSearch} a="ssd" name="agrima" />
-        {userDetails ? <UserProfile {...userDetails} /> : null}
+        <UserSearch
+          onSubmit={onSearch}
+          a="ssd"
+          name="agrima"
+          message={userDetails ? userDetails.message : ""}
+        />
+        {userDetails && userDetails.userName ? (
+          <UserProfile {...userDetails} />
+        ) : null}
       </div>
     </div>
   );
