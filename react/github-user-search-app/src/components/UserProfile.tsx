@@ -16,6 +16,7 @@ type PropsTypes = {
 };
 
 export function UserProfile(prop: PropsTypes) {
+  const date = new Date(prop.joinedAt);
   return (
     <div className="bg-blue-dark rounded-lg h-auto md:p-8 p-6 ">
       <div
@@ -43,7 +44,7 @@ export function UserProfile(prop: PropsTypes) {
             {prop.name}
           </h1>
           <span className="md:place-self-center order-4 md:order-2">
-            {prop.joinedAt}
+            Joined {date.toGMTString().slice(5).slice(0,11)}
           </span>
           <span className="text-blue-light order-3">{prop.userName}</span>
         </div>
