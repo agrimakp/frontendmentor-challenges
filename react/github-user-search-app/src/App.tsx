@@ -48,12 +48,10 @@ function App() {
     text-[15px]
     font-body"
     >
-      <div className="w-[375px] lg:w-[730px] flex flex-col gap-4">
+      <div className="w-[375px] md:w-[730px] flex flex-col gap-4 p-4">
         <HeaderComponent />
         <UserSearch
           onSubmit={onSearch}
-          a="ssd"
-          name="agrima"
           message={userDetails ? userDetails.message : ""}
         />
         {userDetails && userDetails.userName ? (
