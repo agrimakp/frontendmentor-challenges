@@ -15,7 +15,9 @@ export function UserSearch(props: any) {
     rounded-lg
     pl-4
     flex
-    justify-between"
+    items-center
+    justify-center
+    "
       onSubmit={(e) => {
         e.preventDefault();
         props.onSubmit(userName);
@@ -24,7 +26,6 @@ export function UserSearch(props: any) {
       <input
         className="bg-blue-dark
           text-sm
-          p-3
           w-full rounded-lg
           bg-icon-search
           bg-[length:15px_15px]
@@ -37,8 +38,9 @@ export function UserSearch(props: any) {
         onChange={changeName}
         placeholder="Search GitHub username..."
       />
+      <div className="text-red-600 min-w-[82px] ">{props.message}</div>
       <Button />
-      {props.message}
+
     </form>
   );
 }

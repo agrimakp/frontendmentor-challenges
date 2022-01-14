@@ -8,6 +8,7 @@ export function Button(prop: PropsTypes) {
       className="bg-blue-light
    rounded-md
    w-[106px]
+   min-w-[82px]
    h-[36px]
    m-2"
       onClick={prop.onClick as any}
