@@ -51,7 +51,7 @@ export function UserProfile(prop: PropsTypes) {
 
         <div className="col-span-2 md:col-span-1">
 
-            <p className="mt-5 ">{prop.bio}</p>
+            <p className="mt-5 ">{prop.bio ? prop.bio : "This profile has no bio"}</p>
 
 
           <div
