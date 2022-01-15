@@ -5,7 +5,8 @@ export function Button(prop: PropsTypes) {
   return (
     <button
       type="submit"
-      className="bg-blue-light
+      className="bg-skin-button-accent
+      text-white
    rounded-md
    w-[106px]
    min-w-[82px]

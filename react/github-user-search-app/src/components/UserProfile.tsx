@@ -18,7 +18,10 @@ type PropsTypes = {
 export function UserProfile(prop: PropsTypes) {
   const date = new Date(prop.joinedAt);
   return (
-    <div className="bg-blue-dark rounded-lg h-auto md:p-8 p-6 ">
+    <div
+      className="bg-skin-background-muted
+    rounded-lg h-auto md:p-8 p-6 "
+    >
       <div
         className="grid grid-cols-[100px_230px]
       md:grid-cols-[150px_480px] grid-rows-1"
@@ -40,22 +43,22 @@ export function UserProfile(prop: PropsTypes) {
           className="flex flex-col gap-1
           md:col-span-1 md:grid md:grid-cols-[260px_260px]"
         >
-          <h1 className="font-bold md:text-[26px] order-2 md:order-1">
+          <h1 className="font-bold text-[26px] order-2 md:order-1">
             {prop.name}
           </h1>
           <span className="md:place-self-center order-4 md:order-2">
-            Joined {date.toGMTString().slice(5).slice(0,11)}
+            Joined {date.toGMTString().slice(5).slice(0, 11)}
           </span>
-          <span className="text-blue-light order-3">{prop.userName}</span>
+          <span className="text-skin-blue order-3">{prop.userName}</span>
         </div>
 
         <div className="col-span-2 md:col-span-1">
-
-            <p className="mt-5 ">{prop.bio ? prop.bio : "This profile has no bio"}</p>
-
+          <p className="mt-5 ">
+            {prop.bio ? prop.bio : "This profile has no bio"}
+          </p>
 
           <div
-            className="bg-blue-veryDark mt-8
+            className="bg-skin-background-accent mt-8
              text-[11px]
           rounded-lg flex
           flex-row gap-9

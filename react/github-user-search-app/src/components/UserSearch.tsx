@@ -10,7 +10,7 @@ export function UserSearch(props: any) {
   return (
     //   Search GitHub username...
     <form
-      className="bg-blue-dark
+      className="bg-skin-background-muted
     text-sm
     rounded-lg
     pl-4
@@ -24,7 +24,7 @@ export function UserSearch(props: any) {
       }}
     >
       <input
-        className="bg-blue-dark
+        className="bg-skin-background-muted
           text-sm
           w-full rounded-lg
           bg-icon-search

@@ -15,3 +15,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@layer base {
+  :root {
+    --color-text-base: #ffffff;
+    --color-text-blue: #0079ff;
+
+    --color-button-accent: #0079ff;
+
+    --color-background-accent: #141d2f;
+    --color-background-muted: #1e2a47;
+
+  }
+  .theme-swiss {
+    --color-text-base: #000000;
+    --color-text-blue: #0079ff;
+
+    --color-button-accent: #0079ff;
+
+    --color-background-accent: #f6f8ff;
+    --color-background-muted: #fefefe;
+  }
+}

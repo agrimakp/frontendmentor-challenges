@@ -40,9 +40,9 @@ function App() {
 
   return (
     <div
-      className="bg-blue-veryDark
+      className="theme-swiss bg-skin-background-accent
       h-screen w-screen
-    text-white flex
+    text-skin-base flex
     justify-center
     items-center
     text-[15px]
