@@ -32,6 +32,7 @@ const getUserInfo = async (userName: string) => {
 
 function App() {
   const [userDetails, setUserDetails] = useState<any>(null);
+  const [theme, setTheme] = useState("dark");
 
   const onSearch = async (name: string) => {
     const response = await getUserInfo(name);
@@ -40,16 +41,25 @@ function App() {
 
   return (
     <div
-      className="theme-swiss bg-skin-background-accent
+      className={` ${
+        theme == "dark" ? "" : "theme-light"
+      } bg-skin-background-accent
       h-screen w-screen
     text-skin-base flex
     justify-center
     items-center
     text-[15px]
-    font-body"
+    font-body`}
     >
       <div className="w-[375px] md:w-[730px] flex flex-col gap-4 p-4">
-        <HeaderComponent />
+        <HeaderComponent
+          onSwitchTheme={() => {
+            setTheme((currentTheme) => {
+              return currentTheme == "dark" ? "light" : "dark";
+            });
+          }}
+          theme={theme}
+        />
         <UserSearch
           onSubmit={onSearch}
           message={userDetails ? userDetails.message : ""}

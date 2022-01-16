@@ -43,7 +43,7 @@ export function UserProfile(prop: PropsTypes) {
           className="flex flex-col gap-1
           md:col-span-1 md:grid md:grid-cols-[260px_260px]"
         >
-          <h1 className="font-bold text-[26px] order-2 md:order-1">
+          <h1 className="font-bold text-skin-due text-[26px] order-2 md:order-1">
             {prop.name}
           </h1>
           <span className="md:place-self-center order-4 md:order-2">
@@ -70,7 +70,7 @@ export function UserProfile(prop: PropsTypes) {
               <h2>Repos</h2>
               <span
                 className="font-bold text-[16px]
-              md:text-[22px]"
+              md:text-[22px] text-skin-due"
               >
                 {prop.repositoryCount}
               </span>
@@ -79,7 +79,7 @@ export function UserProfile(prop: PropsTypes) {
               <h2>Followers</h2>
               <span
                 className="font-bold text-[16px]
-              md:text-[22px]"
+              md:text-[22px] text-skin-due"
               >
                 {prop.followerCount}
               </span>
@@ -88,7 +88,7 @@ export function UserProfile(prop: PropsTypes) {
               <h2>Following</h2>
               <span
                 className="font-bold text-[16px]
-              md:text-[22px]"
+              md:text-[22px] text-skin-due"
               >
                 {prop.followingCount}
               </span>

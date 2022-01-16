@@ -8,6 +8,7 @@ module.exports = {
         skin: {
           base: "var(--color-text-base)",
           blue: "var(--color-text-blue)",
+          due: "var(--color-text-due)",
         },
       },
       backgroundColor: {
@@ -19,13 +20,7 @@ module.exports = {
       },
 
       // --------------
-      colors: {
-        blue: {
-          veryDark: "#141D2F",
-          dark: "#1E2A47",
-          light: "#0079FF",
-        },
-      },
+
       fontFamily: {
         body: ["Space Mono"],
       },

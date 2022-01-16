@@ -20,20 +20,29 @@ code {
   :root {
     --color-text-base: #ffffff;
     --color-text-blue: #0079ff;
+    --color-text-due: #ffffff;
 
     --color-button-accent: #0079ff;
 
     --color-background-accent: #141d2f;
     --color-background-muted: #1e2a47;
-
+    --color-background-due: #ffffff;
+    --icon-filter-mode: invert(10);
   }
-  .theme-swiss {
-    --color-text-base: #000000;
+  .theme-light {
+    --color-text-base: #4b6a9b;
     --color-text-blue: #0079ff;
+    --color-text-due: #2b3442;
 
     --color-button-accent: #0079ff;
 
     --color-background-accent: #f6f8ff;
     --color-background-muted: #fefefe;
+    --color-background-due: #2b3442;
+    --icon-filter-mode: none;
   }
+}
+
+.iconFilter {
+  filter: var(--icon-filter-mode);
 }
