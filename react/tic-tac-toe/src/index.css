@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --main-bg-color: #1a2a33;
+  --primary-text-color: #a8bfc9;
+  --secondary-text-color: #1a2a33;
+
+  --yellow-button-bg: #f2b137;
+  --yellow-button-bg-hover: #ffc860;
+  --yellow-button-shadow: #cc8b13;
+
+  --blue-button-bg: #31c3bd;
+  --blue-button-bg-hover: #65e9e4;
+  --blue-button-shadow: #118c87;
+
+  --gray-button-bg: #a8bfc9;
+  --gray-button-bg-hover: #dbe8ed;
+  --gray-button-shadow: #6b8997;
+
+  --button-text-color: #1a2a33;
+
+  --player-select-bg-color: #1f3641;
+  --selector-bg-color: #1a2a33;
+}
