@@ -1,4 +1,4 @@
-export function HeaderComponent(prop:any) {
+export function HeaderComponent(prop: any) {
   const switchTheme = () => {
     prop.onSwitchTheme();
   };
@@ -11,7 +11,10 @@ export function HeaderComponent(prop:any) {
           {prop.theme}
         </span>
         <div
-          className={`${(prop.theme == 'dark') ? 'bg-icon-sun' : 'bg-icon-moon' } bg-no-repeat w-[21px] h-[21px] iconFilter`}
+          className={`${(prop.theme == "dark") ? "bg-icon-sun" : "bg-icon-moon"}
+          bg-no-repeat
+          w-[21px] h-[21px]
+          iconFilter`}
         ></div>
       </div>
     </div>
