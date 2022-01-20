@@ -1,6 +1,12 @@
 import { Button } from "./Button";
 
-export function PickPlayer() {
+type PropTypes = {
+  onPick: Function;
+  onSelectMark: Function;
+  selected: string;
+};
+
+export function PickPlayer(props: PropTypes) {
   return (
     <div className="flex flex-col gap-7 justify-center items-center">
       <img className="max-w-min" src="assets/logo.svg" alt="logo" />
@@ -14,23 +20,54 @@ export function PickPlayer() {
           className="bg-selector w-[320px] h-[70px] rounded-lg
          flex flex-row items-center justify-evenly"
         >
-          <div
-            className="rounded-lg w-[150px] h-14
-          flex items-center justify-center"
+          <button
+            className={`${
+              props.selected == "x" ? "bg-selector " : "bg-grayButton"
+            } rounded-lg w-[150px] h-14
+          flex items-center justify-center`}
+            onClick={() => {
+              props.onSelectMark("x");
+            }}
           >
-            <img className="w-8" src="assets/icon-x-gray.svg" />
-          </div>
-          <div
-            className="bg-grayButton rounded-lg w-[150px] h-14
-          flex items-center justify-center"
+            {props.selected == "x" ? (
+              <img className="w-8" src="assets/icon-x-gray.svg" />
+            ) : (
+              <img className="w-8" src="assets/icon-x-dark.svg" />
+            )}
+          </button>
+          <button
+            className={`${
+              props.selected == "x" ? "bg-grayButton " : "bg-selector"
+            }  rounded-lg w-[150px] h-14
+          flex items-center justify-center`}
+            onClick={() => {
+              props.onSelectMark("o");
+            }}
           >
-            <img className="w-8" src="assets/icon-o-dark.svg" />
-          </div>
+            {props.selected == "x" ? (
+                <img className="w-8" src="assets/icon-o-dark.svg" />
+            ) : (
+              <img className="w-8" src="assets/icon-o-gray.svg" />
+            )}
+
+          </button>
         </div>
         <h3 className="text-primary opacity-50">REMEMBER : X GOES FIRST</h3>
       </div>
-      <Button title="New Game (vs cpu)" className="border-b-yellowButton bg-yellowButton" />
-      <Button title="New Game (vs player)" className="border-b-blueButtonShadow bg-blueButton" />
+      <Button
+        title="New Game (vs cpu)"
+        onClick={() => {
+          props.onPick("cpu");
+        }}
+        className="border-b-yellowButton bg-yellowButton"
+      />
+      <Button
+        title="New Game (vs player)"
+        onClick={() => {
+          props.onPick("player");
+        }}
+        className="border-b-blueButtonShadow bg-blueButton"
+      />
     </div>
   );
 }
