@@ -2,10 +2,15 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      text: {
+      colors: {
         primary: "var(--primary-text-color)",
         secondary: "var(--secondary-text-color)",
         button: "var(--button-text-color)",
+        shade: "var(--shade-color)",
+
+        yellowButton: "var(--yellow-button-shadow)",
+        blueButtonShadow: "var(--blue-button-shadow)",
+        grayButtonShadow: "var(--gray-button-shadow)",
       },
 
       backgroundColor: {
@@ -23,15 +28,13 @@ module.exports = {
         selector: "var(--selector-bg-color)",
       },
 
-      shadow: {
-        yellowButton: "var(--yellow-button-shadow)",
-        blueButtonShadow: "var(--blue-button-shadow)",
-        grayButtonShadow: "var(--gray-button-shadow)",
-      },
+
 
       fontFamily: {
         body:["Outfit"],
-      }
+      },
+
+
     },
   },
   plugins: [],
