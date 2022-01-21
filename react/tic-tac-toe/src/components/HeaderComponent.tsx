@@ -4,7 +4,6 @@ type PropsType = {
 };
 export function HeaderComponent(props: PropsType) {
   const nextTurn = props.onNextTurn ? "x" : "o";
-  console.log(props.onRestart);
   return (
     <div className="flex flex-row justify-between">
       <img className="w-24" src="assets/logo.svg" alt="logo" />

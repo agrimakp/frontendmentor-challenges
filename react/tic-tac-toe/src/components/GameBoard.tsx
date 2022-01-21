@@ -21,6 +21,7 @@ export function GameBoard(props: PropsType) {
   };
   const restart = () => {
     setBoxValue(Array(9).fill(null));
+    setxIsNext(true);
   };
 
   return (
