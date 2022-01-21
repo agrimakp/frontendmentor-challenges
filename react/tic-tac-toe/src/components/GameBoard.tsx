@@ -10,7 +10,6 @@ export function GameBoard(props: PropsType) {
   const [boxValue, setBoxValue] = useState(Array(9).fill(null));
   const [xIsNext, setxIsNext] = useState(true);
 
-
   const onPress = (index: number) => {
     const mark = xIsNext ? "x" : "o";
 
@@ -20,10 +19,13 @@ export function GameBoard(props: PropsType) {
     setxIsNext(!xIsNext);
     setBoxValue(temp);
   };
+  const restart = () => {
+    setBoxValue(Array(9).fill(null));
+  };
 
   return (
     <div className="flex flex-col gap-16">
-      <HeaderComponent onNextTurn={xIsNext} />
+      <HeaderComponent onNextTurn={xIsNext} onRestart={restart} />
       <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">
         <BoxContainer
           value={boxValue[0]}
