@@ -24,7 +24,7 @@ function App() {
     >
       <div className="w-[375px]">
         {playerPicked ? (
-          <GameBoard />
+          <GameBoard playerTwo={playerPicked} playerMark={playerMark} />
         ) : (
           <PickPlayer
             onPick={setPlayer}
