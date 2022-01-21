@@ -10,30 +10,75 @@ export function GameBoard(props: PropsType) {
   const [boxValue, setBoxValue] = useState(Array(9).fill(null));
   const [xIsNext, setxIsNext] = useState(true);
 
-  console.log(boxValue);
 
   const onPress = (index: number) => {
     const mark = xIsNext ? "x" : "o";
+
+    // take a copy of boxValue
     const temp = boxValue.slice();
     temp[index] = mark;
-
-    setxIsNext(!xIsNext)
+    setxIsNext(!xIsNext);
     setBoxValue(temp);
   };
 
   return (
     <div className="flex flex-col gap-16">
-      <HeaderComponent />
+      <HeaderComponent onNextTurn={xIsNext} />
       <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">
-        <BoxContainer value={boxValue[0]} onClick={() => { onPress(0) }} />
-        <BoxContainer value={boxValue[1]} onClick={() => { onPress(1) }} />
-        <BoxContainer value={boxValue[2]} onClick={() => { onPress(2) }} />
-        <BoxContainer value={boxValue[3]} onClick={() => { onPress(3) }} />
-        <BoxContainer value={boxValue[4]} onClick={() => { onPress(4) }} />
-        <BoxContainer value={boxValue[5]} onClick={() => { onPress(5) }} />
-        <BoxContainer value={boxValue[6]} onClick={() => { onPress(6) }} />
-        <BoxContainer value={boxValue[7]} onClick={() => { onPress(7) }} />
-        <BoxContainer value={boxValue[8]} onClick={() => { onPress(8) }} />
+        <BoxContainer
+          value={boxValue[0]}
+          onClick={() => {
+            onPress(0);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[1]}
+          onClick={() => {
+            onPress(1);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[2]}
+          onClick={() => {
+            onPress(2);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[3]}
+          onClick={() => {
+            onPress(3);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[4]}
+          onClick={() => {
+            onPress(4);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[5]}
+          onClick={() => {
+            onPress(5);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[6]}
+          onClick={() => {
+            onPress(6);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[7]}
+          onClick={() => {
+            onPress(7);
+          }}
+        />
+        <BoxContainer
+          value={boxValue[8]}
+          onClick={() => {
+            onPress(8);
+          }}
+        />
 
         <div
           className="bg-blueButton rounded-lg h-16
