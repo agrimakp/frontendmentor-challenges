@@ -5,7 +5,7 @@ import { HeaderComponent } from "./HeaderComponent";
 
 type PropsType = {
   playerMark: "x" | "o";
-  playerTwo: "cpu" | "player";
+  playerTwo: "cpu" | "player2";
 };
 export function GameBoard(props: PropsType) {
   const [boxValue, setBoxValue] = useState(Array(9).fill(null));
@@ -36,10 +36,7 @@ export function GameBoard(props: PropsType) {
     setxIsNext(true);
   };
 
-
   useEffect(() => {
-    console.log("we have a winnder", winner);
-
     if (winner == "x") {
       setxWinCount(xWinCount + 1);
     } else if (winner == "o") {
@@ -112,7 +109,9 @@ export function GameBoard(props: PropsType) {
           className="bg-blueButton rounded-lg h-16
         flex flex-col items-center justify-center"
         >
-          <span>X(YOU)</span>
+          <span className="uppercase">
+            x ({props.playerMark == "x" ? "you" : props.playerTwo})
+          </span>
           <h3 className="font-bold text-lg">{xWinCount}</h3>
         </div>
         <div
@@ -126,7 +125,9 @@ export function GameBoard(props: PropsType) {
           className="bg-yellowButton rounded-lg h-16
         flex flex-col items-center justify-center"
         >
-          <span>O (CPU)</span>
+          <span className="uppercase">
+            o ({props.playerMark == "o" ? "you" : props.playerTwo})
+          </span>
           <h3 className="font-bold text-lg">{oWinCount}</h3>
         </div>
       </div>

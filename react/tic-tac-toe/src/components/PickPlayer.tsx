@@ -64,7 +64,7 @@ export function PickPlayer(props: PropTypes) {
       <Button
         title="New Game (vs player)"
         onClick={() => {
-          props.onPick("player");
+          props.onPick("player2");
         }}
         className="border-b-blueButtonShadow bg-blueButton"
       />

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { GameBoard } from "./components/GameBoard";
 import { PickPlayer } from "./components/PickPlayer";
 
-type PlayerType = "cpu" | "player";
+type PlayerType = "cpu" | "player2";
 type MarkType = "x" | "o";
 
 function App() {
