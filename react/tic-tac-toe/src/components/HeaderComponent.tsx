@@ -1,9 +1,8 @@
 type PropsType = {
-  onNextTurn: boolean;
+  nextTurn: string;
   onRestart: Function;
 };
 export function HeaderComponent(props: PropsType) {
-  const nextTurn = props.onNextTurn ? "x" : "o";
   return (
     <div className="flex flex-row justify-between">
       <img className="w-24" src="assets/logo.svg" alt="logo" />
@@ -12,7 +11,7 @@ export function HeaderComponent(props: PropsType) {
         className="bg-playerSelect rounded-md border-b-shade border-b-4
         flex items-center justify-center gap-2 w-1/4"
       >
-        {nextTurn === "x" ? (
+        {props.nextTurn === "x" ? (
           <img className="w-4" src="./assets/icon-x-gray.svg" alt="turn" />
         ) : (
           <img className="w-4" src="./assets/icon-o-gray.svg" alt="turn" />

@@ -9,7 +9,7 @@ type PropsType = {
 };
 export function GameBoard(props: PropsType) {
   const [boxValue, setBoxValue] = useState(Array(9).fill(null));
-  const [xIsNext, setxIsNext] = useState(true);
+  const [currentTurn, setCurrentTurn] = useState("x");
 
   const [xWinCount, setxWinCount] = useState(0);
   const [oWinCount, setoWinCount] = useState(0);
@@ -17,23 +17,62 @@ export function GameBoard(props: PropsType) {
 
   const winner = calculateWinner(boxValue);
 
+  useEffect(() => {
+    if (winner) {
+      console.log("no more turns. game over");
+      return;
+    }
+
+    console.log("current turn is now", currentTurn);
+    if (props.playerMark != currentTurn) {
+      setTimeout(() => {
+        cpuLogic();
+        console.log("cpu is making a move");
+        setCurrentTurn((old) => (old === "x" ? "o" : "x"));
+      }, 1000);
+    }
+  }, [currentTurn]);
+
+  const cpuLogic = () => {
+    let rndInt = Math.floor(Math.random() * 8) + 0;
+
+    while (boxValue[rndInt]) {
+      // index is occupied
+      rndInt = Math.floor(Math.random() * 8) + 0;
+    }
+    // index is free
+
+    const mark = props.playerMark === "x" ? "o" : "x";
+
+    setBoxValue((oldBoxValue) => {
+      const temp = oldBoxValue.slice();
+      temp[rndInt] = mark;
+      return temp;
+    });
+  };
+
   const onPress = (index: number) => {
+    if (props.playerMark != currentTurn) {
+      console.log("not yet boyo. Wait for your turn!");
+      return;
+    }
+
     if (winner || boxValue[index]) {
       return;
     }
 
-    const mark = xIsNext ? "x" : "o";
+    setBoxValue((oldBoxValue) => {
+      const temp = oldBoxValue.slice();
+      temp[index] = props.playerMark;
+      return temp;
+    });
 
-    // take a copy of boxValue
-    const temp = boxValue.slice();
-    temp[index] = mark;
-    setxIsNext(!xIsNext);
-    setBoxValue(temp);
+    setCurrentTurn((old) => (old === "x" ? "o" : "x"));
   };
 
   const restart = () => {
     setBoxValue(Array(9).fill(null));
-    setxIsNext(true);
+    setCurrentTurn("x");
   };
 
   useEffect(() => {
@@ -48,7 +87,7 @@ export function GameBoard(props: PropsType) {
 
   return (
     <div className="flex flex-col gap-16">
-      <HeaderComponent onNextTurn={xIsNext} onRestart={restart} />
+      <HeaderComponent nextTurn={currentTurn} onRestart={restart} />
       <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">
         <BoxContainer
           value={boxValue[0]}
