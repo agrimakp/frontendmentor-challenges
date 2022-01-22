@@ -18,6 +18,10 @@ export function GameBoard(props: PropsType) {
   const winner = calculateWinner(boxValue);
 
   useEffect(() => {
+    if (props.playerTwo != "cpu") {
+      return;
+    }
+
     if (winner) {
       console.log("no more turns. game over");
       return;
@@ -52,7 +56,7 @@ export function GameBoard(props: PropsType) {
   };
 
   const onPress = (index: number) => {
-    if (props.playerMark != currentTurn) {
+    if (props.playerTwo == "cpu" && props.playerMark != currentTurn) {
       console.log("not yet boyo. Wait for your turn!");
       return;
     }
@@ -63,7 +67,7 @@ export function GameBoard(props: PropsType) {
 
     setBoxValue((oldBoxValue) => {
       const temp = oldBoxValue.slice();
-      temp[index] = props.playerMark;
+      temp[index] = currentTurn;
       return temp;
     });
 
