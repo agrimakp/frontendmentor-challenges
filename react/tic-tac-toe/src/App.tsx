@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GameBoard } from "./components/GameBoard";
 import { PickPlayer } from "./components/PickPlayer";
+import { RestartDialog } from "./components/RestartDialog";
 
 type PlayerType = "cpu" | "player2";
 type MarkType = "x" | "o";
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div
-      className="bg-main h-screen w-screen text-[14px] font-body
+      className=" bg-main h-screen w-screen text-[14px] font-body
     font-medium tracking-[0.8px] flex items-center justify-center"
     >
       <div className="w-[375px]">

@@ -8,8 +8,11 @@ module.exports = {
         button: "var(--button-text-color)",
         shade: "var(--shade-color)",
 
+        blueButton: "var( --blue-button-bg)",
         yellowButton: "var(--yellow-button-shadow)",
+
         blueButtonShadow: "var(--blue-button-shadow)",
+        yellowButtonShadow: "var(--yellow-button-shadow)",
         grayButtonShadow: "var(--gray-button-shadow)",
       },
 

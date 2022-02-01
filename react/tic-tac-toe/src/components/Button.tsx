@@ -1,7 +1,7 @@
 type PropTypes = {
   title: string;
-  className: string;
-  onClick: Function;
+  className?: string;
+  onClick?: Function;
 };
 export function Button(props: PropTypes) {
   return (

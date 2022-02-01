@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { calculateWinner } from "../ticTacToe";
 import { BoxContainer } from "./BoxContainer";
 import { HeaderComponent } from "./HeaderComponent";
+import { RestartDialog } from "./RestartDialog";
 
 type PropsType = {
   playerMark: "x" | "o";
@@ -23,7 +24,7 @@ export function GameBoard(props: PropsType) {
     }
 
     if (winner) {
-      console.log("no more turns. game over");
+      // no more turns. game over
       return;
     }
 
@@ -89,91 +90,99 @@ export function GameBoard(props: PropsType) {
     }
   }, [winner]);
 
-  return (
-    <div className="flex flex-col gap-16">
-      <HeaderComponent nextTurn={currentTurn} onRestart={restart} />
-      <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">
-        <BoxContainer
-          value={boxValue[0]}
-          onClick={() => {
-            onPress(0);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[1]}
-          onClick={() => {
-            onPress(1);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[2]}
-          onClick={() => {
-            onPress(2);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[3]}
-          onClick={() => {
-            onPress(3);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[4]}
-          onClick={() => {
-            onPress(4);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[5]}
-          onClick={() => {
-            onPress(5);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[6]}
-          onClick={() => {
-            onPress(6);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[7]}
-          onClick={() => {
-            onPress(7);
-          }}
-        />
-        <BoxContainer
-          value={boxValue[8]}
-          onClick={() => {
-            onPress(8);
-          }}
-        />
+  const exit = () => {
+    window.location.reload();
 
-        <div
-          className="bg-blueButton rounded-lg h-16
+  }
+
+  return (
+    <>
+      {winner ? <RestartDialog winner={winner} onNext={restart} onExit={exit}  /> : null}
+      <div className="flex flex-col gap-16">
+        <HeaderComponent nextTurn={currentTurn} onRestart={restart} />
+        <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">
+          <BoxContainer
+            value={boxValue[0]}
+            onClick={() => {
+              onPress(0);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[1]}
+            onClick={() => {
+              onPress(1);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[2]}
+            onClick={() => {
+              onPress(2);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[3]}
+            onClick={() => {
+              onPress(3);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[4]}
+            onClick={() => {
+              onPress(4);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[5]}
+            onClick={() => {
+              onPress(5);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[6]}
+            onClick={() => {
+              onPress(6);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[7]}
+            onClick={() => {
+              onPress(7);
+            }}
+          />
+          <BoxContainer
+            value={boxValue[8]}
+            onClick={() => {
+              onPress(8);
+            }}
+          />
+
+          <div
+            className="bg-blueButton rounded-lg h-16
         flex flex-col items-center justify-center"
-        >
-          <span className="uppercase">
-            x ({props.playerMark == "x" ? "you" : props.playerTwo})
-          </span>
-          <h3 className="font-bold text-lg">{xWinCount}</h3>
-        </div>
-        <div
-          className="bg-grayButton rounded-lg h-16
+          >
+            <span className="uppercase">
+              x ({props.playerMark == "x" ? "you" : props.playerTwo})
+            </span>
+            <h3 className="font-bold text-lg">{xWinCount}</h3>
+          </div>
+          <div
+            className="bg-grayButton rounded-lg h-16
         flex flex-col items-center justify-center"
-        >
-          <span>TIES</span>
-          <h3 className="font-bold text-lg">{tiesWinCount}</h3>
-        </div>
-        <div
-          className="bg-yellowButton rounded-lg h-16
+          >
+            <span>TIES</span>
+            <h3 className="font-bold text-lg">{tiesWinCount}</h3>
+          </div>
+          <div
+            className="bg-yellowButton rounded-lg h-16
         flex flex-col items-center justify-center"
-        >
-          <span className="uppercase">
-            o ({props.playerMark == "o" ? "you" : props.playerTwo})
-          </span>
-          <h3 className="font-bold text-lg">{oWinCount}</h3>
+          >
+            <span className="uppercase">
+              o ({props.playerMark == "o" ? "you" : props.playerTwo})
+            </span>
+            <h3 className="font-bold text-lg">{oWinCount}</h3>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
