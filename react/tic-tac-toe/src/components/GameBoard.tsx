@@ -7,6 +7,7 @@ import { RestartDialog } from "./RestartDialog";
 type PropsType = {
   playerMark: "x" | "o";
   playerTwo: "cpu" | "player2";
+  onExit: () => void;
 };
 export function GameBoard(props: PropsType) {
   const [boxValue, setBoxValue] = useState(Array(9).fill(null));
@@ -91,13 +92,14 @@ export function GameBoard(props: PropsType) {
   }, [winner]);
 
   const exit = () => {
-    window.location.reload();
-
-  }
+    props.onExit();
+  };
 
   return (
     <>
-      {winner ? <RestartDialog winner={winner} onNext={restart} onExit={exit}  /> : null}
+      {winner ? (
+        <RestartDialog winner={winner} onNext={restart} onExit={exit} />
+      ) : null}
       <div className="flex flex-col gap-16">
         <HeaderComponent nextTurn={currentTurn} onRestart={restart} />
         <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">

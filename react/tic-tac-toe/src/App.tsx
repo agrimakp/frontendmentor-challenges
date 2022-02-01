@@ -18,6 +18,10 @@ function App() {
     setPlayerMark(mark);
   };
 
+  const reset = () => {
+    setPlayerPicked("");
+  };
+
   return (
     <div
       className=" bg-main h-screen w-screen text-[14px] font-body
@@ -25,7 +29,11 @@ function App() {
     >
       <div className="w-[375px]">
         {playerPicked ? (
-          <GameBoard playerTwo={playerPicked} playerMark={playerMark} />
+          <GameBoard
+            playerTwo={playerPicked}
+            playerMark={playerMark}
+            onExit={reset}
+          />
         ) : (
           <PickPlayer
             onPick={setPlayer}
