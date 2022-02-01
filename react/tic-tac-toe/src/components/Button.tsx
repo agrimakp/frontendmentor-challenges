@@ -5,16 +5,12 @@ type PropTypes = {
 };
 export function Button(props: PropTypes) {
   return (
-    <div
+    <button
       className={`p-3 rounded-2xl w-full
-     flex justify-center border-b-8  ${props.className}`}
+      flex justify-center border-b-8 uppercase font-bold tracking-widest ${props.className}`}
+      onClick={props.onClick as any}
     >
-      <button
-        className="uppercase font-bold tracking-widest"
-        onClick={props.onClick as any}
-      >
-        {props.title}
-      </button>
-    </div>
+      {props.title}
+    </button>
   );
 }
