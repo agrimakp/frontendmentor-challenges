@@ -3,6 +3,7 @@ import { calculateWinner } from "../ticTacToe";
 import { BoxContainer } from "./BoxContainer";
 import { HeaderComponent } from "./HeaderComponent";
 import { RestartDialog } from "./RestartDialog";
+import { WinDialog } from "./WinDialog";
 
 type PropsType = {
   playerMark: "x" | "o";
@@ -16,6 +17,8 @@ export function GameBoard(props: PropsType) {
   const [xWinCount, setxWinCount] = useState(0);
   const [oWinCount, setoWinCount] = useState(0);
   const [tiesWinCount, settiesWinCount] = useState(0);
+
+  const [showRestart, setShowRestart] = useState<boolean>();
 
   const winner = calculateWinner(boxValue);
 
@@ -79,6 +82,7 @@ export function GameBoard(props: PropsType) {
   const restart = () => {
     setBoxValue(Array(9).fill(null));
     setCurrentTurn("x");
+    setShowRestart(false);
   };
 
   useEffect(() => {
@@ -95,13 +99,18 @@ export function GameBoard(props: PropsType) {
     props.onExit();
   };
 
+  const restartDialog = () => {
+    setShowRestart(true);
+  }
+
   return (
     <>
       {winner ? (
-        <RestartDialog winner={winner} onNext={restart} onExit={exit} />
+        <WinDialog winner={winner} onNext={restart} onExit={exit} />
       ) : null}
+      {showRestart ? <RestartDialog onCancel={exit} onRestart={restart} /> : null}
       <div className="flex flex-col gap-16">
-        <HeaderComponent nextTurn={currentTurn} onRestart={restart} />
+        <HeaderComponent nextTurn={currentTurn} onRestart={restartDialog} />
         <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full">
           <BoxContainer
             value={boxValue[0]}
