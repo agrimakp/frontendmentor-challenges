@@ -2,70 +2,33 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: { extend: {} },
   plugins: [],
-  mode: 'jit',
+  mode: "jit",
   theme: {
     extend: {
-      colors: {
-        violet: {
-          //Main Backround
-          dark: "hsl(268, 75%, 9%)",
-          //toggle background, keypad background, screen background
-          veryDark: "hsl(268, 71%, 12%)",
 
-          //keys
-          dark1: "hsl(281, 89%, 26%)",
-          darkest: "hsl(268, 47%, 21%)",
-        },
+      backgroundColor: {
+        primary: "var(--color-background-primary)",
+        secondary: "var(--color-background-secondary)",
+        tertiary: "var(--color-background-tertiary)",
 
-        // text
-        white: {
-          neutral: "hsl(0, 0%, 100%)",
-        },
-        blue: {
-          // main background ------theme 1
-          desaturated: "hsl(222, 26%, 31%)",
-          // screen background ------theme 1
-          veryDark: "hsl(224, 36%, 15%)",
-          // toggle background, keypad background ------theme 1
-          dark1: "hsl(223, 31%, 20%)",
-          // key background (del and reset)
-          dark2: "hsl(225, 21%, 49%)",
-          // key shadow (del and reset)
-          dark3: "hsl(224, 28%, 35%)",
-          // text
-          darkGrayish: "hsl(221, 14%, 31%)",
-
-          dark: "hsl(198, 20%, 13%)",
-        },
-        orange: {
-          // key background
-          lightGrayish: "hsl(30, 25%, 89%)",
-          // key shadow
-          grayishOrange: "hsl(28, 16%, 65%)",
-        },
-        red: {
-          normal: "hsl(6, 63%, 50%)",
-          dark: "hsl(6, 70%, 34%)",
-        },
-        yellow: {
-          light: "hsl(52, 100%, 62%)",
-        },
-
-        // Keys
-
-        magenta: {
-          // key shadow
-          vivid: "hsl(285, 91%, 52%)",
-          //
-          dark: "hsl(290, 70%, 36%)",
-        },
-        cyan: {
-          // key background, toggle
-          pure: " hsl(176, 100%, 44%)",
-
-          soft: "hsl(177, 92%, 70%)",
-        },
+        accent: "var(--color-background-accent)",
+        muted: "var(--color-background-muted)",
+        due: "var(--color-background-due)",
       },
+
+      colors: {
+        accent: "var(--color-border-accent)",
+        muted: "var(--color-border-muted)",
+        due: "var(--color-border-due)",
+      },
+
+      textColor: {
+        main: "var(--color-text-main)",
+        primary: "var(--color-text-primary)",
+        secondary: "var(--color-text-secondary)",
+        tertiary: "var(--color-text-tertiary)",
+      },
+
       fontFamily: {
         body: ["Spartan"],
       },

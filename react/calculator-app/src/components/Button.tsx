@@ -8,11 +8,12 @@ export function Button(props: PropType) {
   return (
     <button
       className={`
-    bg-orange-lightGrayish
-    border-0 border-b-4 border-orange-grayishOrange
+    bg-accent
+    border-0 border-b-4 border-accent
     w-16
     h-16
     p-2
+    text-primary
     rounded-md
     ${props.className}
   `}

@@ -35,12 +35,12 @@ export function Calculator() {
 
   return (
     <>
-      <div className="bg-blue-veryDark rounded-lg p-5 text-right">
-        <span id="inputDisplay">{inputExpression || 0}</span>
+      <div className="bg-tertiary rounded-lg p-5 text-right">
+        <span className="text-main" id="inputDisplay">{inputExpression || 0}</span>
       </div>
       <div
         className="
-          bg-blue-dark1
+          bg-secondary
           mt-6
           rounded-lg
           py-5
@@ -72,7 +72,8 @@ export function Calculator() {
         <Button
           title="DEL"
           onClick={backspace}
-          className="bg-blue-dark2 border-0 border-b-4 border-blue-dark3 text-[16px] text-white-neutral"
+          className="bg-muted border-0 border-b-4
+          border-muted text-[16px] text-white"
         />
 
         <Button
@@ -153,16 +154,16 @@ export function Calculator() {
         <Button
           title="RESET"
           onClick={reset}
-          className="bg-blue-dark2
-            border-0 border-b-4 border-blue-dark3 text-[16px] text-white-neutral w-[140px]"
+          className="bg-muted
+            border-0 border-b-4 border-muted text-[16px] text-white w-[140px]"
         />
 
         <Button
           title="="
           onClick={calculate}
-          className="bg-red-normal
-            border-0 border-b-4 border-red-dark
-            w-[140px] text-[16px] text-white-neutral"
+          className="bg-due
+            border-0 border-b-4 border-due
+            w-[140px] text-[16px] text-tertiary"
         />
       </div>
     </>

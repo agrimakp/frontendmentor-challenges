@@ -4,13 +4,14 @@ function App() {
   return (
     <div
       className=" h-screen
+      theme2
   font-body
-  text-[32px] text-white-neutral
+  text-[32px] text-main
   flex
   items-center
   text-center
   justify-center
-  bg-blue-desaturated"
+  bg-primary"
     >
       <div className="w-[325px]">
         <div className="flex justify-between items-center py-5">
