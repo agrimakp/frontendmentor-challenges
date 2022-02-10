@@ -20,7 +20,7 @@ export function ListItem(props: PropType) {
         checked={props.isChecked}
       />
       <label className="mt-3" htmlFor={`checkbox${props.index}`}></label>
-      <span className="ml-2" id="todo">
+      <span className="ml-2 text-blue-accent" id="todo">
         {props.title}
       </span>
       <button className="float-right" onClick={props.onDelete as any}>

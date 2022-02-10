@@ -147,17 +147,17 @@ export function TodoComponent() {
         <div className="flex gap-3">
           <Button
             title="All"
-            className={currentFilter === "all" ? "text-white" : ""}
+            className={currentFilter === "all" ? "text-blue-brightblue" : ""}
             onClick={() => setCurrentFilter("all")}
           />
           <Button
             title="Active"
-            className={currentFilter === "active" ? "text-white" : ""}
+            className={currentFilter === "active" ? "text-blue-brightblue" : ""}
             onClick={() => setCurrentFilter("active")}
           />
           <Button
             title="Completed"
-            className={currentFilter === "completed" ? "text-white" : ""}
+            className={currentFilter === "completed" ? "text-blue-brightblue" : ""}
             onClick={() => setCurrentFilter("completed")}
           />
         </div>

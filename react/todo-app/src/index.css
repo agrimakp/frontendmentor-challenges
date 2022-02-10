@@ -16,4 +16,27 @@ code {
     monospace;
 }
 
+:root {
+  --color-background-primary: hsl(235, 21%, 11%);
+  --color-background-secondary: hsl(235, 24%, 19%);
 
+  --color-text-main: hsl(234, 39%, 85%);
+  --color-text-primary: hsl(237, 14%, 26%);
+  --color-text-secondary: hsl(234, 11%, 52%);
+  --color-text-tertiary: hsl(233, 14%, 35%);
+  --color-text-accent: hsl(236, 33%, 92%);
+  --color-text-brightBlue: hsl(220, 98%, 61%);
+}
+
+.theme2 {
+  --color-background-primary: hsl(236, 33%, 92%);
+  --color-background-secondary: hsl(0, 0%, 98%);
+
+  --color-text-main: hsl(233, 11%, 84%);
+  --color-text-primary: hsl(233, 11%, 84%);
+  --color-text-secondary: hsl(236, 9%, 61%);
+  --color-text-tertiary: hsl(235, 19%, 35%);
+  --color-text-accent: hsl(235, 19%, 35%);
+  --color-text-brightBlue: hsl(220, 98%, 61%);
+
+}

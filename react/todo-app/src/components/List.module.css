@@ -3,8 +3,11 @@
 }
 
 label {
-  background-color: hsl(235, 24%, 19%);
-  border: 1px solid #ccc;
+  background-color: var(--color-background-secondary);
+  border: double 1px transparent;
+  background-image: linear-gradient(var(--color-background-secondary), var(--color-background-secondary)), radial-gradient(circle at top left, #4b80ff, #d59bff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
   border-radius: 50%;
   cursor: pointer;
   height: 24px;

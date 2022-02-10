@@ -7,10 +7,12 @@ module.exports = {
     extend: {
       colors: {
         blue : {
-          veryDark: "hsl(235, 21%, 11%)",
-          desaturated: "hsl(235, 24%, 19%)",
-          grayish: "hsl(234, 39%, 85%)",
-          darkGrayish: "hsl(234, 11%, 52%)",
+          veryDark: "var(--color-background-primary)",
+          desaturated: "var(--color-background-secondary)",
+          grayish: "var(--color-text-main)",
+          darkGrayish: "var(--color-text-secondary)",
+          accent:"var(--color-text-accent)",
+          brightblue:"var(--color-text-brightBlue)",
         }
       },
       fontFamily: {

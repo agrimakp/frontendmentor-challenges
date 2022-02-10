@@ -10,7 +10,7 @@ type PropType = {
 export function InputBox(props: PropType) {
   return (
     <input
-      className={`bg-blue-desaturated text-sm ml-2 outline-none ${props.className}`}
+      className={`bg-blue-desaturated text-sm ml-2 text-blue-accent outline-none ${props.className}`}
       type={props.type}
       name={props.name}
       value={props.value}
