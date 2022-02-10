@@ -12,7 +12,6 @@ Thanks for checking out this front-end coding challenge.
 
 ## Todo
  Drag and drop
- theme
 
 ## The challenge
 
