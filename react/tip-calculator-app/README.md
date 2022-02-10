@@ -13,6 +13,7 @@ Thanks for checking out this front-end coding challenge.
 ## Todo
 custom tip
 css
+reset
 
 ## The challenge
 
