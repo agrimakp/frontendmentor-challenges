@@ -1,11 +1,9 @@
-import { HelloWorld } from "./components/HelloWorld";
+import { Banner } from "./components/Banner";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <HelloWorld />
-      </header>
+    <div className="h-[768px] w-screen text-main">
+      <Banner />
     </div>
   );
 }
