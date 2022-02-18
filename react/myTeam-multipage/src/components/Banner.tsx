@@ -19,7 +19,8 @@ export function Banner() {
           talent. We’re about to change that.
         </p>
       </div>
-      <div className="bg-icon-home2 h-[106px] w-[360px] bg-no-repeat absolute left-2 -bottom-[6px]"></div>
+      <div className="bg-icon-home2 h-[106px] w-[360px] bg-no-repeat
+      absolute -bottom-[6px] left-image-center"></div>
 
 
       {/* <div className="flex h-full items-center justify-evenly">
