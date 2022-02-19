@@ -19,11 +19,30 @@ module.exports = {
       backgroundImage: {
         "icon-home1": "url(./assets/bg-pattern-home-1.svg)",
         "icon-home2": "url(./assets/bg-pattern-home-2.svg)",
+        "icon-home3": "url(./assets/bg-pattern-home-3.svg)",
+
         "icon-menu": "url(./assets/icon-hamburger.svg)",
         "icon-logo": "url(./assets/logo.svg)",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h2: {
+              color: theme('colors.gray.800'),
+            },
+            h3: {
+              color: theme('colors.gray.800'),
+            },
+            strong: {
+              color: theme('colors.gray.800'),
+            },
+          },
+        },
+      })
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
   mode: "jit",
 };
