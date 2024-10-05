@@ -6,4 +6,6 @@
 2- Fylo data storage component
 ![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
 
-3- 
+3- Interactive pricing component
+![image](https://github.com/user-attachments/assets/34e448f6-b7e0-4f75-b318-5ea2dd09f121)
+
