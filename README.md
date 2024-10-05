@@ -9,3 +9,6 @@
 3- Interactive pricing component
 ![image](https://github.com/user-attachments/assets/34e448f6-b7e0-4f75-b318-5ea2dd09f121)
 
+4- NFT preview card component
+![image](https://github.com/user-attachments/assets/85405bc3-db4b-41a2-b22a-62371de8e5dd)
+
