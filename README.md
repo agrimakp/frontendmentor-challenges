@@ -12,3 +12,5 @@
 4- NFT preview card component
 ![image](https://github.com/user-attachments/assets/85405bc3-db4b-41a2-b22a-62371de8e5dd)
 
+5- Order summary card
+![image](https://github.com/user-attachments/assets/c2f5ff7d-092b-4187-9d9d-1c725d9567a8)
