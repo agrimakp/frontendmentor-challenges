@@ -14,3 +14,7 @@
 
 5- Order summary card
 ![image](https://github.com/user-attachments/assets/c2f5ff7d-092b-4187-9d9d-1c725d9567a8)
+
+6- Testimonials grid section
+![image](https://github.com/user-attachments/assets/77a675ec-4041-4019-9879-68bcc7b2d41f)
+
