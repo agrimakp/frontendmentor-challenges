@@ -20,3 +20,7 @@
 
 7- Time tracking dashboard
 ![image](https://github.com/user-attachments/assets/dc219bdf-41b9-447c-acd9-bacb2c89781e)
+
+8- Tip calculator app
+![image](https://github.com/user-attachments/assets/3d17d77c-cb55-44dc-9836-ea9b723ab110)
+
