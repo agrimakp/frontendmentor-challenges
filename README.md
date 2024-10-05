@@ -18,3 +18,5 @@
 6- Testimonials grid section
 ![image](https://github.com/user-attachments/assets/77a675ec-4041-4019-9879-68bcc7b2d41f)
 
+7- Time tracking dashboard
+![image](https://github.com/user-attachments/assets/dc219bdf-41b9-447c-acd9-bacb2c89781e)
