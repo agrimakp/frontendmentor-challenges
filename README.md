@@ -1,6 +1,6 @@
 # Frontendmentor challenges
 
-## Tic Tac Toe (React)
+## 1. Tic Tac Toe (React)
   - View the optimal layout for the game depending on their device's screen size
   - See hover states for all interactive elements on the page
   - Play the game either solo vs the computer or multiplayer against another person
