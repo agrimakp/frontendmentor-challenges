@@ -1,6 +1,6 @@
 # Frontendmentor challenges
 
-## Tic Tac Toe (React)\
+## Tic Tac Toe (React)
 **Mobile view**\
 ![image](https://github.com/user-attachments/assets/169cc45d-37a9-42dc-9f63-9346a32c76f4)
 
