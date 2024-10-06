@@ -1,12 +1,12 @@
 # Frontendmentor challenges
 
-1- Calculator App
+1- Calculator App (React, Vanilla)
 ![image](https://github.com/user-attachments/assets/2d9cf2ba-b699-4588-b18a-322ae397e901)
 
 2- Fylo data storage component
 ![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
 
-3- Interactive pricing component
+3- Interactive pricing component (React, Vanilla)
 ![image](https://github.com/user-attachments/assets/34e448f6-b7e0-4f75-b318-5ea2dd09f121)
 
 4- NFT preview card component
@@ -21,8 +21,8 @@
 7- Time tracking dashboard
 ![image](https://github.com/user-attachments/assets/dc219bdf-41b9-447c-acd9-bacb2c89781e)
 
-8- Tip calculator app
+8- Tip calculator app (React, Vanilla)
 ![image](https://github.com/user-attachments/assets/3d17d77c-cb55-44dc-9836-ea9b723ab110)
 
-9- Todo app
+9- Todo app (React, Vanilla)
 ![image](https://github.com/user-attachments/assets/9297de00-228d-4305-b697-91bffb6adba9)
