@@ -3,6 +3,7 @@
 Tic Tac Toe (React)
 Mobile view
 ![image](https://github.com/user-attachments/assets/169cc45d-37a9-42dc-9f63-9346a32c76f4)
+
 Desktop View
 ![image](https://github.com/user-attachments/assets/e922189e-d9a6-472f-8f76-9db25ae84e0d)
 
