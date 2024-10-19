@@ -22,11 +22,11 @@
 - Perform mathematical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
 
-**Mobile view**
+**Desktop View**
 
 ![image](https://github.com/user-attachments/assets/2d9cf2ba-b699-4588-b18a-322ae397e901)
 
-**Desktop View**
+**Mobile view**
 
 ![image](https://github.com/user-attachments/assets/6b07efd2-9837-4daa-b8c3-b668ab5de825)
 
