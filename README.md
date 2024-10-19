@@ -69,22 +69,23 @@
 
 ![image](https://github.com/user-attachments/assets/018f6367-cda7-4a86-ab16-28b16add0315)
 
-## 5. Fylo data storage component
-![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
-
-## 6. Interactive pricing component (React, Vanilla)
+## 5. Interactive pricing component (React, Vanilla)
 ![image](https://github.com/user-attachments/assets/34e448f6-b7e0-4f75-b318-5ea2dd09f121)
 
-## 7. NFT preview card component
+## 6. Fylo data storage component (Vanilla)
+![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
+
+
+## 7. NFT preview card component (Vanilla)
 ![image](https://github.com/user-attachments/assets/85405bc3-db4b-41a2-b22a-62371de8e5dd)
 
-## 8. Order summary card
+## 8. Order summary card (Vanilla)
 ![image](https://github.com/user-attachments/assets/c2f5ff7d-092b-4187-9d9d-1c725d9567a8)
 
-## 9. Testimonials grid section
+## 9. Testimonials grid section (Vanilla)
 ![image](https://github.com/user-attachments/assets/77a675ec-4041-4019-9879-68bcc7b2d41f)
 
-## 10. Time tracking dashboard
+## 10. Time tracking dashboard (Vanilla)
 ![image](https://github.com/user-attachments/assets/dc219bdf-41b9-447c-acd9-bacb2c89781e)
 
 
