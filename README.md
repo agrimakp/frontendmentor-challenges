@@ -51,9 +51,23 @@
 
 
 
-9- Todo app (React, Vanilla)
+## 4. Todo app (React, Vanilla)
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Filter by all/active/complete todos
+- Clear all completed todos
+- Toggle light and dark mode
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+
+**Desktop View** 
+
 ![image](https://github.com/user-attachments/assets/9297de00-228d-4305-b697-91bffb6adba9)
 
+**Mobile view**
+
+![image](https://github.com/user-attachments/assets/018f6367-cda7-4a86-ab16-28b16add0315)
 
 2- Fylo data storage component
 ![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
