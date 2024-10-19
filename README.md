@@ -17,7 +17,11 @@
 ![image](https://github.com/user-attachments/assets/e922189e-d9a6-472f-8f76-9db25ae84e0d)
 
 
-1- Calculator App (React, Vanilla)
+## 2. Calculator App (React, Vanilla)
+- See the size of the elements adjust based on their device's screen size
+- Perform mathematical operations like addition, subtraction, multiplication, and division
+- Adjust the color theme based on their preference
+  
 ![image](https://github.com/user-attachments/assets/2d9cf2ba-b699-4588-b18a-322ae397e901)
 
 2- Fylo data storage component
