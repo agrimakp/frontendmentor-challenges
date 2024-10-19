@@ -31,6 +31,30 @@
 ![image](https://github.com/user-attachments/assets/6b07efd2-9837-4daa-b8c3-b668ab5de825)
 
 
+## 3. Tip calculator app (React, Vanilla)
+
+- Calculate the correct tip and total cost of the bill per person
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+
+**Desktop View**
+
+![image](https://github.com/user-attachments/assets/3d17d77c-cb55-44dc-9836-ea9b723ab110)
+
+**Active State**
+
+![image](https://github.com/user-attachments/assets/29043300-182b-4114-9a28-dcdcff23bfea)
+
+**Mobile view**
+
+![image](https://github.com/user-attachments/assets/8cd6b10f-74b5-4f9e-bd44-7711c4cdb388)
+
+
+
+9- Todo app (React, Vanilla)
+![image](https://github.com/user-attachments/assets/9297de00-228d-4305-b697-91bffb6adba9)
+
+
 2- Fylo data storage component
 ![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
 
@@ -49,9 +73,4 @@
 7- Time tracking dashboard
 ![image](https://github.com/user-attachments/assets/dc219bdf-41b9-447c-acd9-bacb2c89781e)
 
-8- Tip calculator app (React, Vanilla)
-![image](https://github.com/user-attachments/assets/3d17d77c-cb55-44dc-9836-ea9b723ab110)
-
-9- Todo app (React, Vanilla)
-![image](https://github.com/user-attachments/assets/9297de00-228d-4305-b697-91bffb6adba9)
 
