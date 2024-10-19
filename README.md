@@ -21,8 +21,15 @@
 - See the size of the elements adjust based on their device's screen size
 - Perform mathematical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
-  
+
+**Mobile view**
+
 ![image](https://github.com/user-attachments/assets/2d9cf2ba-b699-4588-b18a-322ae397e901)
+
+**Desktop View**
+
+![image](https://github.com/user-attachments/assets/6b07efd2-9837-4daa-b8c3-b668ab5de825)
+
 
 2- Fylo data storage component
 ![image](https://github.com/user-attachments/assets/6a97729e-7239-42ec-94c2-a60dac0efe6e)
